@@ -46,13 +46,32 @@ enum Attribute: Int16 {
 		case .normal:
 			return "Normal, average day"
 		case .depressed:
-			return "Depressed, sad day"
+			return "Depressing, sad day"
 		case .frustrating:
 			return "Frustrated, angry day"
 		case .stressed:
 			return "Stressed, frantic day"
 		default:
 			return ""
+		}
+	}
+	
+	func toPoints() -> Int {
+		switch self {
+		case .amazing:
+			return 3
+		case .reallyGood:
+			return 1
+		case .normal:
+			return 0
+		case .depressed:
+			return -2
+		case .frustrating:
+			return -3
+		case .stressed:
+			return -2
+		default:
+			return 0
 		}
 	}
 }

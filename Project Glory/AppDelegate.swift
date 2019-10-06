@@ -7,17 +7,49 @@
 //
 
 import UIKit
+import UserNotifications
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+				let center = UNUserNotificationCenter.current()
+				let options: UNAuthorizationOptions = [.alert, .sound];
+				center.requestAuthorization(options: options) {
+					(granted, error) in
+						if !granted {
+							print("Something went wrong")
+						}
+				}
+				center.delegate = self
+			
+				let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+				print("path is \(documentsPath)")
+			
         return true
     }
+	
+		func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+				// Determine the user action
+				switch response.actionIdentifier {
+					case UNNotificationDismissActionIdentifier:
+							print("Dismiss Action")
+					case UNNotificationDefaultActionIdentifier:
+							print("Default")
+							DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+								let userInfo = ["notification": response]
+								let note = Notification(name: .onNotificationStart, userInfo: userInfo)
+								NotificationCenter.default.post(note)
+							})
+					default:
+							print("Unknown action")
+					}
+				completionHandler()
+		}
+
 
     // MARK: UISceneSession Lifecycle
 

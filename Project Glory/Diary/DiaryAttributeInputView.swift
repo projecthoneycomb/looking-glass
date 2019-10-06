@@ -28,6 +28,7 @@ enum InputStage {
 struct DiaryAttributeInputView: View {
 	
 	@State var managedObjectContext: NSManagedObjectContext
+	@State var mainService: MainService
 	@Environment(\.presentationMode) var presentationMode
 	
 	@State private var currentlySelectedAttribute: Attribute?
@@ -145,6 +146,7 @@ struct DiaryAttributeInputView: View {
 	}
 	
 	func closeModal() {
+		self.mainService.clearState()
 		self.presentationMode.wrappedValue.dismiss()
 	}
 	

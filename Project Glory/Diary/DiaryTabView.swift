@@ -12,6 +12,8 @@ struct DiaryTabView: View {
 	@ObservedObject var diaryService: DiaryService = DiaryService()
 	
 	@Environment(\.managedObjectContext) var managedObjectContext
+	@EnvironmentObject var mainService: MainService
+	
 	@FetchRequest(fetchRequest: DiaryEntry.getAllDiaryEntries()) var diaryEntries: FetchedResults<DiaryEntry>
 	@FetchRequest(fetchRequest: DiaryEntry.getEntryFromToday()) var entriesFromToday: FetchedResults<DiaryEntry>
 	
@@ -19,12 +21,12 @@ struct DiaryTabView: View {
 		
 	var body: some View {
 		let formattedEntries: [Month] = self.diaryService.formatDiaryData(entries: self.diaryEntries)
-		
+		let showModalWithNotification = Binding<Bool>(get: { self.mainService.notificationStart ? true : self.$showModal.wrappedValue }, set: { newValue in self.showModal = newValue; })
 		return NavigationView {
 			ScrollView {
 				Group {
 					Button(action: {
-							self.showModal = true
+							showModalWithNotification.wrappedValue = true
 					}) {
 							HStack {
 								Text(self.entriesFromToday.count == 0 ? "Do you want to write today's entry?" : "Do you want to add to today's entry?")
@@ -36,11 +38,11 @@ struct DiaryTabView: View {
 					.padding(EdgeInsets(top: 10, leading: 25, bottom: 10, trailing: 25))
 					.background(Color("hc-blue"))
 					.cornerRadius(.infinity)
-					.sheet(isPresented: self.$showModal) {
+					.sheet(isPresented: showModalWithNotification) {
 						if(self.entriesFromToday.count == 1) {
-							DiaryAttributeInputView(managedObjectContext: self.managedObjectContext, inputStage: .notImplemented)
+							DiaryAttributeInputView(managedObjectContext: self.managedObjectContext, mainService: self.mainService, inputStage: .notImplemented)
 						} else {
-							DiaryAttributeInputView(managedObjectContext: self.managedObjectContext, inputStage: .attributeInput)
+							DiaryAttributeInputView(managedObjectContext: self.managedObjectContext, mainService: self.mainService, inputStage: .attributeInput)
 						}
 					}
 					HStack {

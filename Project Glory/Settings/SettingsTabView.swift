@@ -8,13 +8,47 @@
 
 import SwiftUI
 
+
 struct SettingsTabView: View {
-    var body: some View {
-        NavigationView {
-					Text("Settings")
-					.navigationBarTitle(Text("Settings"))
+	@ObservedObject var settingsService: SettingsService = SettingsService()
+		
+	var body: some View {
+		let timeOfReminders: Binding<Date> = Binding<Date>( get: { self.settingsService.reminderDate }, set: { newVal in self.settingsService.changeTime(newDate: newVal) })
+		return NavigationView {
+			VStack(alignment: .leading, spacing: 10) {
+				Text("What days do you want to be reminded?")
+					.fontWeight(.bold)
+				HStack {
+					ForEach(settingsService.daysOfWeekSettings, id: \.self) { (day: [DayOfWeek: Bool]) in
+						Button(action: { self.settingsService.toggleDay(day: day.keys.first!) }) {
+							Spacer()
+							Text(day.keys.first!.toLabel())
+								.foregroundColor(day.values.first! ? Color.white : Color("hc-blue"))
+								.fontWeight(.bold)
+							Spacer()
+						}
+						.frame(height: 45)
+						.background(day.values.first! ? Color("hc-blue") : Color("background"))
+					}
+					.animation(.easeInOut(duration: 0.1))
 				}
-    }
+				.cornerRadius(.infinity)
+				.navigationBarTitle(Text("Settings"))
+
+				Spacer()
+					.frame(height: 20)
+				
+				Text("What time do you want to be reminded?")
+					.fontWeight(.bold)
+				
+				DatePicker(selection: timeOfReminders, displayedComponents: .hourAndMinute) {
+					Text("")
+				}
+				Spacer()
+			}
+			.padding(30)
+		}
+	}
 }
 
 struct SettingsView_Previews: PreviewProvider {

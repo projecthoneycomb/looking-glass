@@ -7,11 +7,50 @@
 //
 
 import SwiftUI
+import Combine
+
+
+extension NSNotification.Name {
+	static let onNotificationStart = Notification.Name("on-notification-start")
+}
+
+class MainService: ObservableObject {
+	@Published var notificationStart: Bool = false
+	@Published var currentSelection: Int = 0
+	
+	init() {
+		NotificationCenter.default.addObserver(self, selector: #selector(self.handleNotification), name: .onNotificationStart, object: nil)
+	}
+	
+	@objc public func handleNotification() {
+		DispatchQueue.main.async {
+			self.notificationStart = true
+		}
+	}
+	
+	func clearState() {
+		notificationStart = false
+	}
+}
+
+
 
 struct ContentView: View {
-	@State var selection = 0
+		
+	@EnvironmentObject var mainService: MainService
 	var body: some View {
-		return TabView(selection: $selection) {
+		
+		let smartSelection = Binding<Int>( get: {
+			if(self.mainService.notificationStart && self.mainService.currentSelection != 0) {
+				self.mainService.currentSelection = 0
+			}
+			let selection = self.mainService.currentSelection
+			return selection
+		}, set: { newVal in
+			self.mainService.currentSelection = newVal
+		})
+		
+		return TabView(selection: smartSelection) {
 			DiaryTabView()
 				.tabItem {
 					Image(systemName: "text.quote")
@@ -24,7 +63,7 @@ struct ContentView: View {
 					Text("Compass")
 				}
 				.tag(1)
-			SettingsTabPlaceholderView()
+			SettingsTabView()
 				.tabItem {
 					Image(systemName: "gear")
 					Text("Settings")

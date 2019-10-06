@@ -30,14 +30,8 @@ extension DiaryEntry {
 	
 	static func getEntryFromToday() -> NSFetchRequest<DiaryEntry> {
 		let calendar = Calendar.current
-		let date = Date()
-		let dateFrom = calendar.startOfDay(for: Date()) // eg. 2016-10-10 00:00:00
-		let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom)!
-		
-		let fromPredicate = NSPredicate(format: "%@ >= %@", date as NSDate, dateFrom as NSDate)
-		let toPredicate = NSPredicate(format: "%@ < %@", date as NSDate, dateTo as NSDate)
-		let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
-		
+		let startOfToday = calendar.startOfDay(for: Date()) // eg. 2016-10-10 00:00:00
+		let datePredicate = NSPredicate(format: "createdAt >= %@", startOfToday as NSDate)
 		let sortDescriptor = NSSortDescriptor(key: "createdAt", ascending: true)
 		
 		let request: NSFetchRequest<DiaryEntry> = DiaryEntry.fetchRequest() as! NSFetchRequest<DiaryEntry>

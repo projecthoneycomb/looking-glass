@@ -31,7 +31,7 @@ func calculateAngleFromScore(input: Int) -> Double {
 }
 
 struct ArrowView: View {
-	@Binding var input: Int
+	@State var input: Int
 	var body: some View {
 		VStack {
 			HStack(alignment: .center, spacing: 0) {

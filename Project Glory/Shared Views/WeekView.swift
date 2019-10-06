@@ -69,13 +69,13 @@ struct WeekView: View {
 struct WeekView_Previews: PreviewProvider {
     static var previews: some View {
 			let week = [
-				Day(id: 0, name: "Monday", attribute: .amazing),
-				Day(id: 1, name: "Tuesday"),
-				Day(id: 2, name: "Wednesday", attribute: .amazing),
-				Day(id: 3, name: "Thursday", attribute: .amazing),
-				Day(id: 4, name: "Friday", attribute: .noInput),
-				Day(id: 5, name: "Saturday", attribute: .frustrating),
-				Day(id: 6, name: "Sunday", attribute: .frustrating)
+				Day(id: "Monday", dayOfWeek: 0, attribute: .amazing),
+				Day(id: "Tuesday", dayOfWeek: 1),
+				Day(id: "Wednesday", dayOfWeek: 2, attribute: .amazing),
+				Day(id: "Thursday", dayOfWeek: 3, attribute: .amazing),
+				Day(id: "Friday", dayOfWeek: 4, attribute: .noInput),
+				Day(id: "Saturday", dayOfWeek: 5, attribute: .frustrating),
+				Day(id: "Sunday", dayOfWeek: 6, attribute: .frustrating)
 			]
 			
 			return Group {
