@@ -12,8 +12,8 @@ struct CompassTabView: View {
 	@State private var selection = 0
 	
 	
-	@FetchRequest(fetchRequest: DiaryEntry.getLast7DaysOfEntries()) var entriesFromToday: FetchedResults<DiaryEntry>
-
+	@FetchRequest(fetchRequest: DiaryEntry.getLast7DaysOfEntries()) var last7Days: FetchedResults<DiaryEntry>
+	
 	
 	let week = [
 		Day(id: "Monday", dayOfWeek: 0, attribute: .amazing),

@@ -23,12 +23,12 @@ struct SettingsTabView: View {
 						Button(action: { self.settingsService.toggleDay(day: day.keys.first!) }) {
 							Spacer()
 							Text(day.keys.first!.toLabel())
-								.foregroundColor(day.values.first! ? Color.white : Color("hc-blue"))
+								.foregroundColor(day.values.first! ? Color.white : Color("hc-main"))
 								.fontWeight(.bold)
 							Spacer()
 						}
 						.frame(height: 45)
-						.background(day.values.first! ? Color("hc-blue") : Color("background"))
+						.background(day.values.first! ? Color("hc-main") : Color("background"))
 					}
 					.animation(.easeInOut(duration: 0.1))
 				}

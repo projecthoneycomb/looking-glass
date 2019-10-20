@@ -21,11 +21,17 @@ struct DiaryTabView: View {
 		
 	var body: some View {
 		let formattedEntries: [Month] = self.diaryService.formatDiaryData(entries: self.diaryEntries)
-		let showModalWithNotification = Binding<Bool>(get: { self.mainService.notificationStart ? true : self.$showModal.wrappedValue }, set: { newValue in self.showModal = newValue; })
+		let showModalWithNotification = Binding<Bool>(get: {
+			return self.mainService.notificationStart ? true : self.$showModal.wrappedValue
+		}, set: { newValue in
+			self.showModal = newValue
+		})
+		
 		return NavigationView {
 			ScrollView {
 				Group {
 					Button(action: {
+							LogService.event(name: "diary_start_entry_manual")
 							showModalWithNotification.wrappedValue = true
 					}) {
 							HStack {
@@ -36,7 +42,7 @@ struct DiaryTabView: View {
 							}
 					}
 					.padding(EdgeInsets(top: 10, leading: 25, bottom: 10, trailing: 25))
-					.background(Color("hc-blue"))
+					.background(Color("hc-main"))
 					.cornerRadius(.infinity)
 					.sheet(isPresented: showModalWithNotification) {
 						if(self.entriesFromToday.count == 1) {
@@ -44,6 +50,9 @@ struct DiaryTabView: View {
 						} else {
 							DiaryAttributeInputView(managedObjectContext: self.managedObjectContext, mainService: self.mainService, inputStage: .attributeInput)
 						}
+					}
+					if(UpdateService.isUpdated(currentVersion: self.mainService.currentVersion)) {
+						UpdateNotesView(version: self.mainService.currentVersion)
 					}
 					HStack {
 						Spacer()
@@ -63,7 +72,8 @@ struct DiaryTabView: View {
 						Spacer()
 					}
 					.padding(20)
-				}.padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
+				}
+				.padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
 			}
 			.navigationBarTitle(Text("Diary"))
 		}

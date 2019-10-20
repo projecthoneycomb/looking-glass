@@ -26,7 +26,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // ❇️ Get the managedObjectContext from the persistent container
             let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 					
-						let mainService = MainService()
+						let nsObject: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject?
+						let version = nsObject as! String
+					
+						let mainService = MainService(version: version)
             
             // ❇️ Pass it to the ContentView through the managedObjectContext @Environment variable
             let contentView = ContentView()

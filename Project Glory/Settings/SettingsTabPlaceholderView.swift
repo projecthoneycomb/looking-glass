@@ -19,7 +19,7 @@ struct SettingsTabPlaceholderView: View {
 						.fontWeight(.semibold)
 						.multilineTextAlignment(.center)
 				}
-				.foregroundColor(Color("hc-blue"))
+				.foregroundColor(Color("hc-main"))
 				.padding(100)
     }
 }

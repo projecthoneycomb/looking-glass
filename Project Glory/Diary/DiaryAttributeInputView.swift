@@ -51,7 +51,7 @@ struct DiaryAttributeInputView: View {
 					Button(action: closeModal) {
 						Image(systemName: "xmark")
 							.resizable()
-							.accentColor(Color("hc-blue"))
+							.accentColor(Color("hc-main"))
 							.scaledToFill()
 					}
 					.frame(width: 20, height: 20, alignment: .center)
@@ -77,7 +77,7 @@ struct DiaryAttributeInputView: View {
 								.multilineTextAlignment(.center)
 							Spacer()
 						}
-						.foregroundColor(Color("hc-blue"))
+						.foregroundColor(Color("hc-main"))
 						.padding(.horizontal, 60)
 					}
 				}
@@ -99,7 +99,7 @@ struct DiaryAttributeInputView: View {
 								.foregroundColor(.white)
 						}
 						.padding(EdgeInsets(top: 10, leading: 25, bottom: 10, trailing: 25))
-						.background(Color("hc-blue"))
+						.background(Color("hc-main"))
 						.cornerRadius(.infinity)
 						.opacity(currentlySelectedAttribute != nil ? 1 : 0.4)
 						Button(action: { self.currentlySelectedAttribute == nil ? self.closeModal() : self.saveAndClose() }) {
@@ -123,7 +123,7 @@ struct DiaryAttributeInputView: View {
 							.foregroundColor(.white)
 					}
 					.padding(EdgeInsets(top: 10, leading: 25, bottom: 10, trailing: 25))
-					.background(Color("hc-blue"))
+					.background(Color("hc-main"))
 					.cornerRadius(.infinity)
 				} else if (self.inputStage == .notImplemented) {
 					Button(action: self.closeModal) {
@@ -151,6 +151,7 @@ struct DiaryAttributeInputView: View {
 	}
 	
 	func saveText() {
+		LogService.event(name: "diary_save_text")
 		var currentTitle = self.currentlySelectedAttribute?.toDescription()
 		if (!self.currentTitle.isEmpty) {
 			currentTitle = self.currentTitle
@@ -176,10 +177,13 @@ struct DiaryAttributeInputView: View {
 		saveAttribute { diaryEntry in
 			self.currentEntry = diaryEntry
 			self.inputStage = .textInput
+			LogService.event(name: "diary_start_text")
 		}
 	}
 	
 	func saveAttribute(cb: (DiaryEntry?) -> Void) {
+		LogService.event(name: "diary_save_attribute")
+		
 		guard let attribute = self.currentlySelectedAttribute else {
 			return
 		}

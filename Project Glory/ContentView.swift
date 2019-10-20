@@ -17,13 +17,18 @@ extension NSNotification.Name {
 class MainService: ObservableObject {
 	@Published var notificationStart: Bool = false
 	@Published var currentSelection: Int = 0
+	var currentVersion: String
+	@Published var updateModelState: Bool?
 	
-	init() {
+	init(version: String) {
+		self.currentVersion = version
+		LogService.startup(version: version)
 		NotificationCenter.default.addObserver(self, selector: #selector(self.handleNotification), name: .onNotificationStart, object: nil)
 	}
 	
 	@objc public func handleNotification() {
 		DispatchQueue.main.async {
+			LogService.event(name: "diary_start_entry_from_notification")
 			self.notificationStart = true
 		}
 	}
@@ -70,7 +75,7 @@ struct ContentView: View {
 				}
 				.tag(2)
 		}.edgesIgnoringSafeArea(.top)
-		.accentColor(Color("hc-blue"))
+		.accentColor(Color("hc-main"))
 	}
 }
 
