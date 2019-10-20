@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,7 +29,6 @@
 		1ABA398F23475BB100ED6546 /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA398E23475BB100ED6546 /* DiaryEntryView.swift */; };
 		1ABA3992234764E100ED6546 /* CompassTabPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA3991234764E100ED6546 /* CompassTabPlaceholderView.swift */; };
 		1ABA3994234765B700ED6546 /* SettingsTabPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA3993234765B700ED6546 /* SettingsTabPlaceholderView.swift */; };
-		1AEF6934235C7D120006910D /* SwiftyRequest in Frameworks */ = {isa = PBXBuildFile; productRef = 1AEF6933235C7D120006910D /* SwiftyRequest */; };
 		1AEF6936235C7DCB0006910D /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6935235C7DCB0006910D /* LogService.swift */; };
 		1AEF6938235C8BFD0006910D /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6937235C8BFD0006910D /* UpdateService.swift */; };
 		1AEF693B235C9D050006910D /* UpdateNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF693A235C9D050006910D /* UpdateNotesView.swift */; };
@@ -73,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AEF6934235C7D120006910D /* SwiftyRequest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +202,6 @@
 			);
 			name = "Project Glory";
 			packageProductDependencies = (
-				1AEF6933235C7D120006910D /* SwiftyRequest */,
 			);
 			productName = projectglory;
 			productReference = 1A2E8B20233B884700BC113C /* Project Glory.app */;
@@ -235,7 +232,6 @@
 			);
 			mainGroup = 1A2E8B17233B884700BC113C;
 			packageReferences = (
-				1AEF6932235C7D120006910D /* XCRemoteSwiftPackageReference "SwiftyRequest" */,
 			);
 			productRefGroup = 1A2E8B21233B884700BC113C /* Products */;
 			projectDirPath = "";
@@ -425,7 +421,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Glory/Project Glory.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Glory/Preview Content\"";
 				DEVELOPMENT_TEAM = Q6A6V2T4L3;
 				ENABLE_PREVIEWS = YES;
@@ -451,7 +447,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Glory/Project Glory.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Glory/Preview Content\"";
 				DEVELOPMENT_TEAM = Q6A6V2T4L3;
 				ENABLE_PREVIEWS = YES;
@@ -492,25 +488,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		1AEF6932235C7D120006910D /* XCRemoteSwiftPackageReference "SwiftyRequest" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/IBM-Swift/SwiftyRequest.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		1AEF6933235C7D120006910D /* SwiftyRequest */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1AEF6932235C7D120006910D /* XCRemoteSwiftPackageReference "SwiftyRequest" */;
-			productName = SwiftyRequest;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		1A2E8B27233B884700BC113C /* projectglory.xcdatamodeld */ = {
