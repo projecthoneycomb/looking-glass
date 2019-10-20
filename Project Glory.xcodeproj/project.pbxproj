@@ -421,7 +421,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Glory/Project Glory.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Glory/Preview Content\"";
 				DEVELOPMENT_TEAM = Q6A6V2T4L3;
 				ENABLE_PREVIEWS = YES;
@@ -447,7 +447,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Glory/Project Glory.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Glory/Preview Content\"";
 				DEVELOPMENT_TEAM = Q6A6V2T4L3;
 				ENABLE_PREVIEWS = YES;
