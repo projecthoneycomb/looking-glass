@@ -18,9 +18,18 @@ public class DiaryEntry: NSManagedObject, Identifiable  {
 	@NSManaged public var weekOfMonth: Int16
 	@NSManaged public var year: Int16
 	@NSManaged public var createdAt: Date
+	@NSManaged public var uuid: UUID
 }
 
 extension DiaryEntry {
+	static func updateAllEntries() -> NSBatchUpdateRequest {
+		let request: NSBatchUpdateRequest = NSBatchUpdateRequest(entity: self.entity())
+		let predicate = NSPredicate(format: "uuid = nil")
+		request.predicate = predicate
+		request.propertiesToUpdate = ["uuid": UUID()]
+		return request
+	}
+	
 	static func getAllDiaryEntries() -> NSFetchRequest<DiaryEntry> {
 		let request: NSFetchRequest<DiaryEntry> = DiaryEntry.fetchRequest() as! NSFetchRequest<DiaryEntry>
 		let sortDescriptor = NSSortDescriptor(key: "createdAt", ascending: true)

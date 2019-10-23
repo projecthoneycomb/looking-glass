@@ -22,7 +22,7 @@ struct BigButton: View {
 					.foregroundColor(.white)
 					.multilineTextAlignment(.center)
 					.lineLimit(2)
-					.allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+					.allowsTightening(true)
 					.padding(10)
 				Spacer()
 			}

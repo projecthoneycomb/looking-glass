@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UIKit
 import CoreData
 
 extension AnyTransition {
@@ -48,13 +49,23 @@ struct DiaryAttributeInputView: View {
 			VStack(alignment: .leading) {
 				HStack {
 					Spacer()
-					Button(action: closeModal) {
-						Image(systemName: "xmark")
-							.resizable()
-							.accentColor(Color("hc-main"))
-							.scaledToFill()
+					if(self.inputStage == .textInput) {
+						Button(action: saveText) {
+							Image(systemName: "checkmark")
+								.resizable()
+								.accentColor(Color("hc-main"))
+								.scaledToFill()
+						}
+						.frame(width: 20, height: 20, alignment: .center)
+					} else {
+						Button(action: closeModal) {
+							Image(systemName: "xmark")
+								.resizable()
+								.accentColor(Color("hc-main"))
+								.scaledToFill()
+						}
+						.frame(width: 20, height: 20, alignment: .center)
 					}
-					.frame(width: 20, height: 20, alignment: .center)
 				}
 				Text(date)
 					.font(.subheadline)
@@ -152,11 +163,9 @@ struct DiaryAttributeInputView: View {
 	
 	func saveText() {
 		LogService.event(name: "diary_save_text")
-		var currentTitle = self.currentlySelectedAttribute?.toDescription()
-		if (!self.currentTitle.isEmpty) {
-			currentTitle = self.currentTitle
+		if(!self.currentTitle.isEmpty) {
+			self.currentEntry?.title = self.currentTitle
 		}
-		self.currentEntry?.title = currentTitle
 		self.currentEntry?.body = currentText
 		
 		do {
@@ -218,7 +227,7 @@ struct DiaryTextInput: View {
 	var body: some View {
 		let hour = calendar.component(.hour, from: Date())
 		let minutes = calendar.component(.minute, from: Date())
-
+	
 		return Group {
 			VStack(alignment: .leading, spacing: -10) {
 				Text("What do you want to")
@@ -236,7 +245,7 @@ struct DiaryTextInput: View {
 				Text("\(hour):\(minutes)")
 					.font(.footnote)
 			}
-			TextField("Tap to start typing", text: $currentText)
+			DiaryEntryTextField(placeholder: "Tap to start typing", changeHandler: { text in self.currentText = text }, onCommitHandler:{ })
 		}
 	}
 }
@@ -246,7 +255,7 @@ struct AttributeSelection: View {
 	var body: some View {
 		Group {
 			Text("How has today gone?")
-				.font(.largeTitle)
+				.font(.title)
 				.fontWeight(.bold)
 			Text("Don’t over think it; go with your gut.")
 				.font(.footnote)

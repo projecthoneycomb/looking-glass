@@ -19,14 +19,18 @@ struct UpdateNotesView: View {
 		ZStack {
 			HStack {
 				Image("LeftCelebrate")
-					.offset(x: -30, y: isAnimating ? -10 : 10)
+					.offset(x: -40 + ((UIScreen.main.bounds.width - 320) * 0.4), y: self.isAnimating ? -10 : 10)
+					.scaleEffect(self.isAnimating ? 1.05 : 1)
+					.rotationEffect(self.isAnimating ? Angle(degrees: 2) : Angle(degrees: -2))
 					.animation(
 						Animation.easeInOut(duration: 8)
 						.repeatForever()
 					)
 				Spacer()
 				Image("RightCelebrate")
-					.offset(x: 30, y: isAnimating ? -14 : 6)
+					.offset(x: 40 - ((UIScreen.main.bounds.width - 320) * 0.4), y: self.isAnimating ? -14 : 6)
+					.scaleEffect(self.isAnimating ? 1.05 : 1)
+					.rotationEffect(self.isAnimating ? Angle(degrees: -2) : Angle(degrees: 2))
 					.animation(
 						Animation.easeInOut(duration: 11)
 						.repeatForever()
@@ -42,7 +46,7 @@ struct UpdateNotesView: View {
 					Text("New updates!")
 						.font(.title)
 						.fontWeight(.bold)
-						ForEach(UpdateService.updatesForVersion(version: version), id: \.self) { update in
+					ForEach(UpdateService.updatesForVersion(version: self.version), id: \.self) { update in
 							Text("• " + update)
 								.font(.subheadline)
 								.fontWeight(.medium)

@@ -15,9 +15,41 @@
 		1A2E8B2D233B884900BC113C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E8B2C233B884900BC113C /* Assets.xcassets */; };
 		1A2E8B30233B884900BC113C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E8B2F233B884900BC113C /* Preview Assets.xcassets */; };
 		1A2E8B33233B884900BC113C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E8B31233B884900BC113C /* LaunchScreen.storyboard */; };
+		1A529871235F57600079CDB4 /* 1.0.4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A529870235F57600079CDB4 /* 1.0.4.txt */; };
+		1A608F87235F49DE007E10C7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A608F86235F49DE007E10C7 /* CloudKit.framework */; };
+		1A608F8A235F4B90007E10C7 /* DiaryEntryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA16242235E10EA00BCC63B /* DiaryEntryTextField.swift */; };
+		1A608F8B235F4B90007E10C7 /* DiaryAttributeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4EDB5233E1B70007A1753 /* DiaryAttributeInputView.swift */; };
+		1A608F8C235F4B90007E10C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E8B23233B884700BC113C /* AppDelegate.swift */; };
+		1A608F8D235F4B90007E10C7 /* SettingsTabPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA3993234765B700ED6546 /* SettingsTabPlaceholderView.swift */; };
+		1A608F8E235F4B90007E10C7 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E2E233BB24600C6E918 /* WeekView.swift */; };
+		1A608F8F235F4B90007E10C7 /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08814023462204004B1690 /* BigButton.swift */; };
+		1A608F90235F4B90007E10C7 /* DiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4EDBA233E2BFE007A1753 /* DiaryService.swift */; };
+		1A608F91235F4B90007E10C7 /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6937235C8BFD0006910D /* UpdateService.swift */; };
+		1A608F92235F4B90007E10C7 /* UpdateNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF693A235C9D050006910D /* UpdateNotesView.swift */; };
+		1A608F93235F4B90007E10C7 /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA398E23475BB100ED6546 /* DiaryEntryView.swift */; };
+		1A608F94235F4B90007E10C7 /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E30233BCE9700C6E918 /* ArrowView.swift */; };
+		1A608F95235F4B90007E10C7 /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E36233CF16800C6E918 /* SettingsTabView.swift */; };
+		1A608F96235F4B90007E10C7 /* DiaryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E32233CEC4600C6E918 /* DiaryTabView.swift */; };
+		1A608F97235F4B90007E10C7 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6935235C7DCB0006910D /* LogService.swift */; };
+		1A608F98235F4B90007E10C7 /* CompassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A791C402347927C004C54BF /* CompassService.swift */; };
+		1A608F99235F4B90007E10C7 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6940235DC61A0006910D /* Tag.swift */; };
+		1A608F9A235F4B90007E10C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E8B25233B884700BC113C /* SceneDelegate.swift */; };
+		1A608F9B235F4B90007E10C7 /* CompassTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E34233CF15C00C6E918 /* CompassTabView.swift */; };
+		1A608F9C235F4B90007E10C7 /* CompassTabPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA3991234764E100ED6546 /* CompassTabPlaceholderView.swift */; };
+		1A608F9D235F4B90007E10C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E8B2A233B884700BC113C /* ContentView.swift */; };
+		1A608F9E235F4B90007E10C7 /* DiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4EDBD233E5D24007A1753 /* DiaryEntry.swift */; };
+		1A608F9F235F4B90007E10C7 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A791C3E234773C8004C54BF /* Attribute.swift */; };
+		1A608FA0235F4B90007E10C7 /* projectglory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E8B27233B884700BC113C /* projectglory.xcdatamodeld */; };
+		1A608FA1235F4B90007E10C7 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A791C4223479BFE004C54BF /* SettingsService.swift */; };
+		1A608FA3235F4B90007E10C7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A608F86235F49DE007E10C7 /* CloudKit.framework */; };
+		1A608FA5235F4B90007E10C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E8B31233B884900BC113C /* LaunchScreen.storyboard */; };
+		1A608FA6235F4B90007E10C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E8B2F233B884900BC113C /* Preview Assets.xcassets */; };
+		1A608FA7235F4B90007E10C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E8B2C233B884900BC113C /* Assets.xcassets */; };
+		1A608FA8235F4B90007E10C7 /* 1.0.3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1AEF693E235CA64F0006910D /* 1.0.3.txt */; };
 		1A791C3F234773C8004C54BF /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A791C3E234773C8004C54BF /* Attribute.swift */; };
 		1A791C412347927C004C54BF /* CompassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A791C402347927C004C54BF /* CompassService.swift */; };
 		1A791C4323479BFE004C54BF /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A791C4223479BFE004C54BF /* SettingsService.swift */; };
+		1AA16243235E10EA00BCC63B /* DiaryEntryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA16242235E10EA00BCC63B /* DiaryEntryTextField.swift */; };
 		1AA4EDB6233E1B70007A1753 /* DiaryAttributeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4EDB5233E1B70007A1753 /* DiaryAttributeInputView.swift */; };
 		1AA4EDBB233E2BFE007A1753 /* DiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4EDBA233E2BFE007A1753 /* DiaryService.swift */; };
 		1AA4EDBE233E5D24007A1753 /* DiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4EDBD233E5D24007A1753 /* DiaryEntry.swift */; };
@@ -33,6 +65,7 @@
 		1AEF6938235C8BFD0006910D /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6937235C8BFD0006910D /* UpdateService.swift */; };
 		1AEF693B235C9D050006910D /* UpdateNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF693A235C9D050006910D /* UpdateNotesView.swift */; };
 		1AEF693F235CA64F0006910D /* 1.0.3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1AEF693E235CA64F0006910D /* 1.0.3.txt */; };
+		1AEF6941235DC61A0006910D /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6940235DC61A0006910D /* Tag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,10 +79,15 @@
 		1A2E8B2F233B884900BC113C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A2E8B32233B884900BC113C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A2E8B34233B884900BC113C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A529870235F57600079CDB4 /* 1.0.4.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 1.0.4.txt; sourceTree = "<group>"; };
+		1A608F86235F49DE007E10C7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		1A608FAC235F4B90007E10C7 /* Project Glory Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Glory Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A608FAD235F4B90007E10C7 /* Project Glory copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Project Glory copy-Info.plist"; path = "/Users/james/Documents/Projects/projectglory/Project Glory copy-Info.plist"; sourceTree = "<absolute>"; };
 		1A791C3E234773C8004C54BF /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		1A791C402347927C004C54BF /* CompassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassService.swift; sourceTree = "<group>"; };
 		1A791C4223479BFE004C54BF /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		1A791C442347A484004C54BF /* Project Glory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project Glory.entitlements"; sourceTree = "<group>"; };
+		1AA16242235E10EA00BCC63B /* DiaryEntryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryTextField.swift; sourceTree = "<group>"; };
 		1AA4EDB5233E1B70007A1753 /* DiaryAttributeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryAttributeInputView.swift; sourceTree = "<group>"; };
 		1AA4EDBA233E2BFE007A1753 /* DiaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryService.swift; sourceTree = "<group>"; };
 		1AA4EDBD233E5D24007A1753 /* DiaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntry.swift; sourceTree = "<group>"; };
@@ -65,6 +103,7 @@
 		1AEF6937235C8BFD0006910D /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		1AEF693A235C9D050006910D /* UpdateNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNotesView.swift; sourceTree = "<group>"; };
 		1AEF693E235CA64F0006910D /* 1.0.3.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 1.0.3.txt; sourceTree = "<group>"; };
+		1AEF6940235DC61A0006910D /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +111,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A608F87235F49DE007E10C7 /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A608FA2235F4B90007E10C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A608FA3235F4B90007E10C7 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +143,8 @@
 			children = (
 				1A2E8B22233B884700BC113C /* Project Glory */,
 				1A2E8B21233B884700BC113C /* Products */,
+				1A608F85235F49DE007E10C7 /* Frameworks */,
+				1A608FAD235F4B90007E10C7 /* Project Glory copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				1A2E8B20233B884700BC113C /* Project Glory.app */,
+				1A608FAC235F4B90007E10C7 /* Project Glory Dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +187,14 @@
 				1A2E8B2F233B884900BC113C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1A608F85235F49DE007E10C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A608F86235F49DE007E10C7 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		1AA4EDBC233E5D0B007A1753 /* Entities */ = {
@@ -173,6 +232,8 @@
 				1AA52E2E233BB24600C6E918 /* WeekView.swift */,
 				1A08814023462204004B1690 /* BigButton.swift */,
 				1AEF693A235C9D050006910D /* UpdateNotesView.swift */,
+				1AEF6940235DC61A0006910D /* Tag.swift */,
+				1AA16242235E10EA00BCC63B /* DiaryEntryTextField.swift */,
 			);
 			path = "Shared Views";
 			sourceTree = "<group>";
@@ -181,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				1AEF693E235CA64F0006910D /* 1.0.3.txt */,
+				1A529870235F57600079CDB4 /* 1.0.4.txt */,
 			);
 			path = Updates;
 			sourceTree = "<group>";
@@ -205,6 +267,25 @@
 			);
 			productName = projectglory;
 			productReference = 1A2E8B20233B884700BC113C /* Project Glory.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1A608F88235F4B90007E10C7 /* Project Glory Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A608FA9235F4B90007E10C7 /* Build configuration list for PBXNativeTarget "Project Glory Dev" */;
+			buildPhases = (
+				1A608F89235F4B90007E10C7 /* Sources */,
+				1A608FA2235F4B90007E10C7 /* Frameworks */,
+				1A608FA4235F4B90007E10C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Project Glory Dev";
+			packageProductDependencies = (
+			);
+			productName = projectglory;
+			productReference = 1A608FAC235F4B90007E10C7 /* Project Glory Dev.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -238,6 +319,7 @@
 			projectRoot = "";
 			targets = (
 				1A2E8B1F233B884700BC113C /* Project Glory */,
+				1A608F88235F4B90007E10C7 /* Project Glory Dev */,
 			);
 		};
 /* End PBXProject section */
@@ -247,10 +329,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A529871235F57600079CDB4 /* 1.0.4.txt in Resources */,
 				1A2E8B33233B884900BC113C /* LaunchScreen.storyboard in Resources */,
 				1A2E8B30233B884900BC113C /* Preview Assets.xcassets in Resources */,
 				1A2E8B2D233B884900BC113C /* Assets.xcassets in Resources */,
 				1AEF693F235CA64F0006910D /* 1.0.3.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A608FA4235F4B90007E10C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A608FA5235F4B90007E10C7 /* LaunchScreen.storyboard in Resources */,
+				1A608FA6235F4B90007E10C7 /* Preview Assets.xcassets in Resources */,
+				1A608FA7235F4B90007E10C7 /* Assets.xcassets in Resources */,
+				1A608FA8235F4B90007E10C7 /* 1.0.3.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA16243235E10EA00BCC63B /* DiaryEntryTextField.swift in Sources */,
 				1AA4EDB6233E1B70007A1753 /* DiaryAttributeInputView.swift in Sources */,
 				1A2E8B24233B884700BC113C /* AppDelegate.swift in Sources */,
 				1ABA3994234765B700ED6546 /* SettingsTabPlaceholderView.swift in Sources */,
@@ -275,6 +370,7 @@
 				1AA52E33233CEC4600C6E918 /* DiaryTabView.swift in Sources */,
 				1AEF6936235C7DCB0006910D /* LogService.swift in Sources */,
 				1A791C412347927C004C54BF /* CompassService.swift in Sources */,
+				1AEF6941235DC61A0006910D /* Tag.swift in Sources */,
 				1A2E8B26233B884700BC113C /* SceneDelegate.swift in Sources */,
 				1AA52E35233CF15C00C6E918 /* CompassTabView.swift in Sources */,
 				1ABA3992234764E100ED6546 /* CompassTabPlaceholderView.swift in Sources */,
@@ -283,6 +379,37 @@
 				1A791C3F234773C8004C54BF /* Attribute.swift in Sources */,
 				1A2E8B29233B884700BC113C /* projectglory.xcdatamodeld in Sources */,
 				1A791C4323479BFE004C54BF /* SettingsService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A608F89235F4B90007E10C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A608F8A235F4B90007E10C7 /* DiaryEntryTextField.swift in Sources */,
+				1A608F8B235F4B90007E10C7 /* DiaryAttributeInputView.swift in Sources */,
+				1A608F8C235F4B90007E10C7 /* AppDelegate.swift in Sources */,
+				1A608F8D235F4B90007E10C7 /* SettingsTabPlaceholderView.swift in Sources */,
+				1A608F8E235F4B90007E10C7 /* WeekView.swift in Sources */,
+				1A608F8F235F4B90007E10C7 /* BigButton.swift in Sources */,
+				1A608F90235F4B90007E10C7 /* DiaryService.swift in Sources */,
+				1A608F91235F4B90007E10C7 /* UpdateService.swift in Sources */,
+				1A608F92235F4B90007E10C7 /* UpdateNotesView.swift in Sources */,
+				1A608F93235F4B90007E10C7 /* DiaryEntryView.swift in Sources */,
+				1A608F94235F4B90007E10C7 /* ArrowView.swift in Sources */,
+				1A608F95235F4B90007E10C7 /* SettingsTabView.swift in Sources */,
+				1A608F96235F4B90007E10C7 /* DiaryTabView.swift in Sources */,
+				1A608F97235F4B90007E10C7 /* LogService.swift in Sources */,
+				1A608F98235F4B90007E10C7 /* CompassService.swift in Sources */,
+				1A608F99235F4B90007E10C7 /* Tag.swift in Sources */,
+				1A608F9A235F4B90007E10C7 /* SceneDelegate.swift in Sources */,
+				1A608F9B235F4B90007E10C7 /* CompassTabView.swift in Sources */,
+				1A608F9C235F4B90007E10C7 /* CompassTabPlaceholderView.swift in Sources */,
+				1A608F9D235F4B90007E10C7 /* ContentView.swift in Sources */,
+				1A608F9E235F4B90007E10C7 /* DiaryEntry.swift in Sources */,
+				1A608F9F235F4B90007E10C7 /* Attribute.swift in Sources */,
+				1A608FA0235F4B90007E10C7 /* projectglory.xcdatamodeld in Sources */,
+				1A608FA1235F4B90007E10C7 /* SettingsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +548,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Glory/Project Glory.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Glory/Preview Content\"";
 				DEVELOPMENT_TEAM = Q6A6V2T4L3;
 				ENABLE_PREVIEWS = YES;
@@ -430,7 +557,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = org.projecthoneycomb.projectglory;
 				PRODUCT_NAME = "Project Glory";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -447,7 +574,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Glory/Project Glory.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Glory/Preview Content\"";
 				DEVELOPMENT_TEAM = Q6A6V2T4L3;
 				ENABLE_PREVIEWS = YES;
@@ -456,9 +583,61 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = org.projecthoneycomb.projectglory;
 				PRODUCT_NAME = "Project Glory";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		1A608FAA235F4B90007E10C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Project Glory/Project Glory.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_ASSET_PATHS = "\"Project Glory/Preview Content\"";
+				DEVELOPMENT_TEAM = Q6A6V2T4L3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Project Glory copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = org.projecthoneycomb.projectglory.dev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		1A608FAB235F4B90007E10C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Project Glory/Project Glory.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_ASSET_PATHS = "\"Project Glory/Preview Content\"";
+				DEVELOPMENT_TEAM = Q6A6V2T4L3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Project Glory copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = org.projecthoneycomb.projectglory.dev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
@@ -483,6 +662,15 @@
 			buildConfigurations = (
 				1A2E8B4E233B884A00BC113C /* Debug */,
 				1A2E8B4F233B884A00BC113C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A608FA9235F4B90007E10C7 /* Build configuration list for PBXNativeTarget "Project Glory Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A608FAA235F4B90007E10C7 /* Debug */,
+				1A608FAB235F4B90007E10C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

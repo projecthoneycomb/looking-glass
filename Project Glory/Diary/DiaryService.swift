@@ -89,7 +89,7 @@ class DiaryService: ObservableObject {
 				month.weeks.append(Week(id: UUID().uuidString, weekOfYear: week, days: days))
 			}
 			
-			month.weeks.sort { $0.weekOfYear > $1.weekOfYear }
+			month.weeks.sort { $0.weekOfYear < $1.weekOfYear }
 			return month
 		}
 		

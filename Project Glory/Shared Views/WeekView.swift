@@ -26,7 +26,7 @@ struct WeekView: View {
 							)
 						}
 						
-						if let entry = day.entry, let _ = day.entry?.title {
+						if let entry = day.entry, let _ = day.entry?.body {
 							return AnyView(
 								NavigationLink(destination: DiaryEntryView(entry: entry)) {
 									ZStack {

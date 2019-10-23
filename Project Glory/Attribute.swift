@@ -9,7 +9,12 @@
 import Foundation
 import SwiftUI
 
-enum Attribute: Int16 {
+struct TagData: Hashable {
+	var text: String
+	var color: Color
+}
+
+enum Attribute: Int16, CaseIterable {
 	case noInput = 0
 	case amazing = 1
 	case reallyGood = 2
@@ -34,6 +39,25 @@ enum Attribute: Int16 {
 			return Color("hc-orange")
 		default:
 			return .gray
+		}
+	}
+	
+	func toTags() -> [TagData] {
+		switch self {
+		case .amazing:
+			return [TagData(text: "Amazing", color: self.toColor()), TagData(text: "Fantastic", color: self.toColor())]
+		case .reallyGood:
+			return [TagData(text: "Really good", color: self.toColor()), TagData(text: "Happy", color: self.toColor())]
+		case .normal:
+			return [TagData(text: "Normal", color: self.toColor()), TagData(text: "Average", color: self.toColor())]
+		case .depressed:
+			return [TagData(text: "Depressed", color: self.toColor()), TagData(text: "Sad", color: self.toColor())]
+		case .frustrating:
+			return [TagData(text: "Frustrated", color: self.toColor()), TagData(text: "Angry", color: self.toColor())]
+		case .stressed:
+			return [TagData(text: "Stressed", color: self.toColor()), TagData(text: "Frantic", color: self.toColor())]
+		case .noInput:
+			return [TagData(text: "No input", color: self.toColor())]
 		}
 	}
 	

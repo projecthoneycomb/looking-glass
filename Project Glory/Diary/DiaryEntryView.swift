@@ -19,21 +19,34 @@ struct DiaryEntryView: View {
 		let time = dateFormatter.string(from: entry.createdAt)
 
 		return VStack(alignment: .leading) {
+			HStack(alignment: .center, spacing: 10) {
+				ForEach(Attribute(rawValue: entry.attribute)?.toTags() ?? [], id: \.self) { (tag: TagData) in
+					Tag(color: tag.color, text: tag.text)
+				}
+			}
+			
+			Spacer()
+				.frame(height: 15)
+			
 			Text(date)
 				.font(.subheadline)
 
-			HStack(alignment: .center) {
+			if(self.entry.title != nil) {
 				Text(self.entry.title!)
-					.font(.title)
-					.fontWeight(.bold)
+				.font(.title)
+				.fontWeight(.bold)
+			}
+
+			HStack(alignment: .firstTextBaseline) {
+				Text(self.entry.body!)
 				Spacer()
 				Text(time)
 					.font(.footnote)
+
 			}
-			Text(self.entry.body!)
 			Spacer()
 		}
-		.padding()
+		.padding(20)
 		.navigationBarTitle(Text(""), displayMode: .inline)
 	}
 }

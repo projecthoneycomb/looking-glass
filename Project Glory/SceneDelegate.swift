@@ -25,6 +25,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             // ❇️ Get the managedObjectContext from the persistent container
             let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+						managedObjectContext.automaticallyMergesChangesFromParent = true
+					
+						do {
+							let request = DiaryEntry.updateAllEntries()
+							let _ = try managedObjectContext.execute(request)
+						} catch {
+							fatalError("Failed to execute request: \(error)")
+						}
 					
 						let nsObject: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject?
 						let version = nsObject as! String

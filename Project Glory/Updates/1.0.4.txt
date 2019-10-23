@@ -1,0 +1,3 @@
+Private iCloud sync
+New diary entry screen
+More sensible calendar

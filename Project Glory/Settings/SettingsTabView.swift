@@ -41,8 +41,12 @@ struct SettingsTabView: View {
 				Text("What time do you want to be reminded?")
 					.fontWeight(.bold)
 				
-				DatePicker(selection: timeOfReminders, displayedComponents: .hourAndMinute) {
-					Text("")
+				HStack {
+					Spacer()
+					DatePicker(selection: timeOfReminders, displayedComponents: .hourAndMinute) {
+						Text("")
+					}
+					Spacer()
 				}
 				Spacer()
 			}
