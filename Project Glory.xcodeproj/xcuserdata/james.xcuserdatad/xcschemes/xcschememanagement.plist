@@ -4,20 +4,10 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Project Glory Dev.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
 		<key>Project Glory copy.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
-		</dict>
-		<key>Project Glory.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
 		</dict>
 		<key>projectglory.xcscheme_^#shared#^_</key>
 		<dict>
@@ -28,6 +18,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>1A2E8B1F233B884700BC113C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1A608F88235F4B90007E10C7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
