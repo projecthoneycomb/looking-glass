@@ -43,6 +43,14 @@ class MainService: ObservableObject {
 struct ContentView: View {
 		
 	@EnvironmentObject var mainService: MainService
+	
+	init() {
+		let transBarAppearance = UINavigationBarAppearance()
+		transBarAppearance.configureWithTransparentBackground()
+				
+		UINavigationBar.appearance().standardAppearance = transBarAppearance
+	}
+	
 	var body: some View {
 		
 		let smartSelection = Binding<Int>( get: {
@@ -56,10 +64,10 @@ struct ContentView: View {
 		})
 		
 		return TabView(selection: smartSelection) {
-			DiaryTabView()
+			MainTabView()
 				.tabItem {
-					Image(systemName: "text.quote")
-					Text("Diary")
+					Image(systemName: "house.fill")
+					Text("Home")
 				}
 				.tag(0)
 			CompassTabPlaceholderView()

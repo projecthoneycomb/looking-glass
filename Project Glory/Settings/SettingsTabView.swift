@@ -32,8 +32,8 @@ struct SettingsTabView: View {
 					}
 					.animation(.easeInOut(duration: 0.1))
 				}
-				.cornerRadius(.infinity)
-				.navigationBarTitle(Text("Settings"))
+				.cornerRadius(6)
+				.navigationBarTitle(Text("Settings ⚙️"))
 
 				Spacer()
 					.frame(height: 20)

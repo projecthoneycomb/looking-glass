@@ -51,6 +51,29 @@ struct WeekView: View {
 							})
 						}
 						
+						if let entry = day.entry, let entries = day.entry?.entries, entries.count > 0 {
+							return AnyView(
+								NavigationLink(destination: DiaryEntryView(entry: entry)) {
+									ZStack {
+										Rectangle()
+											.frame(width: self.spacing, height: self.spacing)
+											.cornerRadius(3)
+											.foregroundColor(attribute.toColor())
+										ZStack {
+											Circle()
+												.frame(width: 20, height: 20)
+												.foregroundColor(.red)
+											Image(systemName: "bookmark.fill")
+												.resizable()
+												.aspectRatio(contentMode: .fit)
+												.frame(width: 10, height: 10)
+												.foregroundColor(.white)
+										}
+										.offset(x: 15, y: -15)
+								}
+							})
+						}
+						
 						return AnyView(
 								ZStack {
 									Rectangle()

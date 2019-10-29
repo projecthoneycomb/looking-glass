@@ -15,21 +15,20 @@
 		1A2E8B2D233B884900BC113C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E8B2C233B884900BC113C /* Assets.xcassets */; };
 		1A2E8B30233B884900BC113C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E8B2F233B884900BC113C /* Preview Assets.xcassets */; };
 		1A2E8B33233B884900BC113C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E8B31233B884900BC113C /* LaunchScreen.storyboard */; };
+		1A35A7D323673F340042C9A3 /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35A7D123673F340042C9A3 /* DiaryEntryView.swift */; };
+		1A35A7D423673F340042C9A3 /* DiaryTodayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35A7D223673F340042C9A3 /* DiaryTodayButton.swift */; };
+		1A35A7D723675F220042C9A3 /* TagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35A7D623675F220042C9A3 /* TagButton.swift */; };
+		1A35A7DB2368679F0042C9A3 /* DiaryEntryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35A7DA2368679F0042C9A3 /* DiaryEntryText.swift */; };
 		1A529871235F57600079CDB4 /* 1.0.4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A529870235F57600079CDB4 /* 1.0.4.txt */; };
 		1A608F87235F49DE007E10C7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A608F86235F49DE007E10C7 /* CloudKit.framework */; };
-		1A608F8A235F4B90007E10C7 /* DiaryEntryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA16242235E10EA00BCC63B /* DiaryEntryTextField.swift */; };
-		1A608F8B235F4B90007E10C7 /* DiaryAttributeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4EDB5233E1B70007A1753 /* DiaryAttributeInputView.swift */; };
 		1A608F8C235F4B90007E10C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E8B23233B884700BC113C /* AppDelegate.swift */; };
 		1A608F8D235F4B90007E10C7 /* SettingsTabPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA3993234765B700ED6546 /* SettingsTabPlaceholderView.swift */; };
 		1A608F8E235F4B90007E10C7 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E2E233BB24600C6E918 /* WeekView.swift */; };
-		1A608F8F235F4B90007E10C7 /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08814023462204004B1690 /* BigButton.swift */; };
-		1A608F90235F4B90007E10C7 /* DiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4EDBA233E2BFE007A1753 /* DiaryService.swift */; };
 		1A608F91235F4B90007E10C7 /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6937235C8BFD0006910D /* UpdateService.swift */; };
 		1A608F92235F4B90007E10C7 /* UpdateNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF693A235C9D050006910D /* UpdateNotesView.swift */; };
-		1A608F93235F4B90007E10C7 /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA398E23475BB100ED6546 /* DiaryEntryView.swift */; };
 		1A608F94235F4B90007E10C7 /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E30233BCE9700C6E918 /* ArrowView.swift */; };
 		1A608F95235F4B90007E10C7 /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E36233CF16800C6E918 /* SettingsTabView.swift */; };
-		1A608F96235F4B90007E10C7 /* DiaryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E32233CEC4600C6E918 /* DiaryTabView.swift */; };
+		1A608F96235F4B90007E10C7 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E32233CEC4600C6E918 /* MainTabView.swift */; };
 		1A608F97235F4B90007E10C7 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6935235C7DCB0006910D /* LogService.swift */; };
 		1A608F98235F4B90007E10C7 /* CompassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A791C402347927C004C54BF /* CompassService.swift */; };
 		1A608F99235F4B90007E10C7 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6940235DC61A0006910D /* Tag.swift */; };
@@ -49,18 +48,21 @@
 		1A791C3F234773C8004C54BF /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A791C3E234773C8004C54BF /* Attribute.swift */; };
 		1A791C412347927C004C54BF /* CompassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A791C402347927C004C54BF /* CompassService.swift */; };
 		1A791C4323479BFE004C54BF /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A791C4223479BFE004C54BF /* SettingsService.swift */; };
+		1A99BD8623671FB5004A82E6 /* TagGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A99BD8523671FB5004A82E6 /* TagGridView.swift */; };
 		1AA16243235E10EA00BCC63B /* DiaryEntryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA16242235E10EA00BCC63B /* DiaryEntryTextField.swift */; };
 		1AA4EDB6233E1B70007A1753 /* DiaryAttributeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4EDB5233E1B70007A1753 /* DiaryAttributeInputView.swift */; };
 		1AA4EDBB233E2BFE007A1753 /* DiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4EDBA233E2BFE007A1753 /* DiaryService.swift */; };
 		1AA4EDBE233E5D24007A1753 /* DiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4EDBD233E5D24007A1753 /* DiaryEntry.swift */; };
 		1AA52E2F233BB24600C6E918 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E2E233BB24600C6E918 /* WeekView.swift */; };
 		1AA52E31233BCE9700C6E918 /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E30233BCE9700C6E918 /* ArrowView.swift */; };
-		1AA52E33233CEC4600C6E918 /* DiaryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E32233CEC4600C6E918 /* DiaryTabView.swift */; };
+		1AA52E33233CEC4600C6E918 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E32233CEC4600C6E918 /* MainTabView.swift */; };
 		1AA52E35233CF15C00C6E918 /* CompassTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E34233CF15C00C6E918 /* CompassTabView.swift */; };
 		1AA52E37233CF16800C6E918 /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E36233CF16800C6E918 /* SettingsTabView.swift */; };
-		1ABA398F23475BB100ED6546 /* DiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA398E23475BB100ED6546 /* DiaryEntryView.swift */; };
+		1AB0FBAF23687B2C004768AA /* DiaryDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0FBAE23687B2C004768AA /* DiaryDecorationView.swift */; };
+		1AB229F5236710AB001F6B6E /* BasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB229F4236710AB001F6B6E /* BasicButton.swift */; };
 		1ABA3992234764E100ED6546 /* CompassTabPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA3991234764E100ED6546 /* CompassTabPlaceholderView.swift */; };
 		1ABA3994234765B700ED6546 /* SettingsTabPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA3993234765B700ED6546 /* SettingsTabPlaceholderView.swift */; };
+		1AC26CFF2360A07A0097AFAD /* 1.1.0.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1AC26CFE2360A07A0097AFAD /* 1.1.0.txt */; };
 		1AEF6936235C7DCB0006910D /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6935235C7DCB0006910D /* LogService.swift */; };
 		1AEF6938235C8BFD0006910D /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6937235C8BFD0006910D /* UpdateService.swift */; };
 		1AEF693B235C9D050006910D /* UpdateNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF693A235C9D050006910D /* UpdateNotesView.swift */; };
@@ -70,7 +72,7 @@
 
 /* Begin PBXFileReference section */
 		1A08814023462204004B1690 /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
-		1A2E8B20233B884700BC113C /* Project Glory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Glory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A2E8B20233B884700BC113C /* Looking Glass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Looking Glass.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2E8B23233B884700BC113C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A2E8B25233B884700BC113C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1A2E8B28233B884700BC113C /* projectglory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = projectglory.xcdatamodel; sourceTree = "<group>"; };
@@ -79,6 +81,10 @@
 		1A2E8B2F233B884900BC113C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A2E8B32233B884900BC113C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A2E8B34233B884900BC113C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A35A7D123673F340042C9A3 /* DiaryEntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEntryView.swift; sourceTree = "<group>"; };
+		1A35A7D223673F340042C9A3 /* DiaryTodayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryTodayButton.swift; sourceTree = "<group>"; };
+		1A35A7D623675F220042C9A3 /* TagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButton.swift; sourceTree = "<group>"; };
+		1A35A7DA2368679F0042C9A3 /* DiaryEntryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryText.swift; sourceTree = "<group>"; };
 		1A529870235F57600079CDB4 /* 1.0.4.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 1.0.4.txt; sourceTree = "<group>"; };
 		1A608F86235F49DE007E10C7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1A608FAC235F4B90007E10C7 /* Project Glory Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Glory Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,18 +93,21 @@
 		1A791C402347927C004C54BF /* CompassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassService.swift; sourceTree = "<group>"; };
 		1A791C4223479BFE004C54BF /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		1A791C442347A484004C54BF /* Project Glory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project Glory.entitlements"; sourceTree = "<group>"; };
+		1A99BD8523671FB5004A82E6 /* TagGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGridView.swift; sourceTree = "<group>"; };
 		1AA16242235E10EA00BCC63B /* DiaryEntryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryTextField.swift; sourceTree = "<group>"; };
 		1AA4EDB5233E1B70007A1753 /* DiaryAttributeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryAttributeInputView.swift; sourceTree = "<group>"; };
 		1AA4EDBA233E2BFE007A1753 /* DiaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryService.swift; sourceTree = "<group>"; };
 		1AA4EDBD233E5D24007A1753 /* DiaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntry.swift; sourceTree = "<group>"; };
 		1AA52E2E233BB24600C6E918 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		1AA52E30233BCE9700C6E918 /* ArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
-		1AA52E32233CEC4600C6E918 /* DiaryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTabView.swift; sourceTree = "<group>"; };
+		1AA52E32233CEC4600C6E918 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		1AA52E34233CF15C00C6E918 /* CompassTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassTabView.swift; sourceTree = "<group>"; };
 		1AA52E36233CF16800C6E918 /* SettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabView.swift; sourceTree = "<group>"; };
-		1ABA398E23475BB100ED6546 /* DiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntryView.swift; sourceTree = "<group>"; };
+		1AB0FBAE23687B2C004768AA /* DiaryDecorationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDecorationView.swift; sourceTree = "<group>"; };
+		1AB229F4236710AB001F6B6E /* BasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButton.swift; sourceTree = "<group>"; };
 		1ABA3991234764E100ED6546 /* CompassTabPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassTabPlaceholderView.swift; sourceTree = "<group>"; };
 		1ABA3993234765B700ED6546 /* SettingsTabPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabPlaceholderView.swift; sourceTree = "<group>"; };
+		1AC26CFE2360A07A0097AFAD /* 1.1.0.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 1.1.0.txt; sourceTree = "<group>"; };
 		1AEF6935235C7DCB0006910D /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		1AEF6937235C8BFD0006910D /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		1AEF693A235C9D050006910D /* UpdateNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNotesView.swift; sourceTree = "<group>"; };
@@ -126,16 +135,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A1E29F7233E0FBF00BC9B2A /* Diary */ = {
+		1A1E29F7233E0FBF00BC9B2A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				1AEF693A235C9D050006910D /* UpdateNotesView.swift */,
+				1A789E24236087D8001C6E24 /* Diary */,
 				1AA4EDBC233E5D0B007A1753 /* Entities */,
-				1AA52E32233CEC4600C6E918 /* DiaryTabView.swift */,
-				1AA4EDB5233E1B70007A1753 /* DiaryAttributeInputView.swift */,
-				1AA4EDBA233E2BFE007A1753 /* DiaryService.swift */,
-				1ABA398E23475BB100ED6546 /* DiaryEntryView.swift */,
+				1AA52E32233CEC4600C6E918 /* MainTabView.swift */,
 			);
-			path = Diary;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		1A2E8B17233B884700BC113C = {
@@ -151,7 +159,7 @@
 		1A2E8B21233B884700BC113C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A2E8B20233B884700BC113C /* Project Glory.app */,
+				1A2E8B20233B884700BC113C /* Looking Glass.app */,
 				1A608FAC235F4B90007E10C7 /* Project Glory Dev.app */,
 			);
 			name = Products;
@@ -165,7 +173,7 @@
 				1ABF5323233E10F30043CD80 /* Shared Views */,
 				1ABF5322233E10EB0043CD80 /* Compass */,
 				1ABF5321233E10E20043CD80 /* Settings */,
-				1A1E29F7233E0FBF00BC9B2A /* Diary */,
+				1A1E29F7233E0FBF00BC9B2A /* Main */,
 				1A2E8B23233B884700BC113C /* AppDelegate.swift */,
 				1A2E8B2A233B884700BC113C /* ContentView.swift */,
 				1A2E8B25233B884700BC113C /* SceneDelegate.swift */,
@@ -189,6 +197,20 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		1A35A7D5236742AC0042C9A3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AA4EDB5233E1B70007A1753 /* DiaryAttributeInputView.swift */,
+				1A08814023462204004B1690 /* BigButton.swift */,
+				1AA16242235E10EA00BCC63B /* DiaryEntryTextField.swift */,
+				1A35A7D123673F340042C9A3 /* DiaryEntryView.swift */,
+				1A35A7D223673F340042C9A3 /* DiaryTodayButton.swift */,
+				1AA4EDBA233E2BFE007A1753 /* DiaryService.swift */,
+				1AB0FBAE23687B2C004768AA /* DiaryDecorationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1A608F85235F49DE007E10C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,10 +219,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1A789E24236087D8001C6E24 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				1A35A7D5236742AC0042C9A3 /* Views */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
 		1AA4EDBC233E5D0B007A1753 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				1AA4EDBD233E5D24007A1753 /* DiaryEntry.swift */,
+				1A35A7DA2368679F0042C9A3 /* DiaryEntryText.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -229,11 +260,11 @@
 		1ABF5323233E10F30043CD80 /* Shared Views */ = {
 			isa = PBXGroup;
 			children = (
-				1AA52E2E233BB24600C6E918 /* WeekView.swift */,
-				1A08814023462204004B1690 /* BigButton.swift */,
-				1AEF693A235C9D050006910D /* UpdateNotesView.swift */,
 				1AEF6940235DC61A0006910D /* Tag.swift */,
-				1AA16242235E10EA00BCC63B /* DiaryEntryTextField.swift */,
+				1AA52E2E233BB24600C6E918 /* WeekView.swift */,
+				1AB229F4236710AB001F6B6E /* BasicButton.swift */,
+				1A99BD8523671FB5004A82E6 /* TagGridView.swift */,
+				1A35A7D623675F220042C9A3 /* TagButton.swift */,
 			);
 			path = "Shared Views";
 			sourceTree = "<group>";
@@ -243,6 +274,7 @@
 			children = (
 				1AEF693E235CA64F0006910D /* 1.0.3.txt */,
 				1A529870235F57600079CDB4 /* 1.0.4.txt */,
+				1AC26CFE2360A07A0097AFAD /* 1.1.0.txt */,
 			);
 			path = Updates;
 			sourceTree = "<group>";
@@ -266,7 +298,7 @@
 			packageProductDependencies = (
 			);
 			productName = projectglory;
-			productReference = 1A2E8B20233B884700BC113C /* Project Glory.app */;
+			productReference = 1A2E8B20233B884700BC113C /* Looking Glass.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1A608F88235F4B90007E10C7 /* Project Glory Dev */ = {
@@ -330,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A529871235F57600079CDB4 /* 1.0.4.txt in Resources */,
+				1AC26CFF2360A07A0097AFAD /* 1.1.0.txt in Resources */,
 				1A2E8B33233B884900BC113C /* LaunchScreen.storyboard in Resources */,
 				1A2E8B30233B884900BC113C /* Preview Assets.xcassets in Resources */,
 				1A2E8B2D233B884900BC113C /* Assets.xcassets in Resources */,
@@ -361,19 +394,25 @@
 				1ABA3994234765B700ED6546 /* SettingsTabPlaceholderView.swift in Sources */,
 				1AA52E2F233BB24600C6E918 /* WeekView.swift in Sources */,
 				1A08814123462204004B1690 /* BigButton.swift in Sources */,
+				1A35A7D723675F220042C9A3 /* TagButton.swift in Sources */,
 				1AA4EDBB233E2BFE007A1753 /* DiaryService.swift in Sources */,
 				1AEF6938235C8BFD0006910D /* UpdateService.swift in Sources */,
+				1A35A7DB2368679F0042C9A3 /* DiaryEntryText.swift in Sources */,
+				1A99BD8623671FB5004A82E6 /* TagGridView.swift in Sources */,
 				1AEF693B235C9D050006910D /* UpdateNotesView.swift in Sources */,
-				1ABA398F23475BB100ED6546 /* DiaryEntryView.swift in Sources */,
+				1AB229F5236710AB001F6B6E /* BasicButton.swift in Sources */,
 				1AA52E31233BCE9700C6E918 /* ArrowView.swift in Sources */,
 				1AA52E37233CF16800C6E918 /* SettingsTabView.swift in Sources */,
-				1AA52E33233CEC4600C6E918 /* DiaryTabView.swift in Sources */,
+				1AA52E33233CEC4600C6E918 /* MainTabView.swift in Sources */,
+				1A35A7D423673F340042C9A3 /* DiaryTodayButton.swift in Sources */,
 				1AEF6936235C7DCB0006910D /* LogService.swift in Sources */,
+				1AB0FBAF23687B2C004768AA /* DiaryDecorationView.swift in Sources */,
 				1A791C412347927C004C54BF /* CompassService.swift in Sources */,
 				1AEF6941235DC61A0006910D /* Tag.swift in Sources */,
 				1A2E8B26233B884700BC113C /* SceneDelegate.swift in Sources */,
 				1AA52E35233CF15C00C6E918 /* CompassTabView.swift in Sources */,
 				1ABA3992234764E100ED6546 /* CompassTabPlaceholderView.swift in Sources */,
+				1A35A7D323673F340042C9A3 /* DiaryEntryView.swift in Sources */,
 				1A2E8B2B233B884700BC113C /* ContentView.swift in Sources */,
 				1AA4EDBE233E5D24007A1753 /* DiaryEntry.swift in Sources */,
 				1A791C3F234773C8004C54BF /* Attribute.swift in Sources */,
@@ -386,19 +425,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A608F8A235F4B90007E10C7 /* DiaryEntryTextField.swift in Sources */,
-				1A608F8B235F4B90007E10C7 /* DiaryAttributeInputView.swift in Sources */,
 				1A608F8C235F4B90007E10C7 /* AppDelegate.swift in Sources */,
 				1A608F8D235F4B90007E10C7 /* SettingsTabPlaceholderView.swift in Sources */,
 				1A608F8E235F4B90007E10C7 /* WeekView.swift in Sources */,
-				1A608F8F235F4B90007E10C7 /* BigButton.swift in Sources */,
-				1A608F90235F4B90007E10C7 /* DiaryService.swift in Sources */,
 				1A608F91235F4B90007E10C7 /* UpdateService.swift in Sources */,
 				1A608F92235F4B90007E10C7 /* UpdateNotesView.swift in Sources */,
-				1A608F93235F4B90007E10C7 /* DiaryEntryView.swift in Sources */,
 				1A608F94235F4B90007E10C7 /* ArrowView.swift in Sources */,
 				1A608F95235F4B90007E10C7 /* SettingsTabView.swift in Sources */,
-				1A608F96235F4B90007E10C7 /* DiaryTabView.swift in Sources */,
+				1A608F96235F4B90007E10C7 /* MainTabView.swift in Sources */,
 				1A608F97235F4B90007E10C7 /* LogService.swift in Sources */,
 				1A608F98235F4B90007E10C7 /* CompassService.swift in Sources */,
 				1A608F99235F4B90007E10C7 /* Tag.swift in Sources */,
@@ -557,9 +591,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.projecthoneycomb.projectglory;
-				PRODUCT_NAME = "Project Glory";
+				PRODUCT_NAME = "Looking Glass";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
@@ -583,9 +617,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.projecthoneycomb.projectglory;
-				PRODUCT_NAME = "Project Glory";
+				PRODUCT_NAME = "Looking Glass";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;

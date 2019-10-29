@@ -9,22 +9,42 @@
 import SwiftUI
 
 struct Tag: View {
-	@State var color: Color
-	@State var text: String
+	@State var data: TagData?
+	@State var color: Color?
+	@State var text: String?
 	@Environment(\.colorScheme) var colorScheme: ColorScheme
 	
 	var body: some View {
-		Text(text)
-			.font(.subheadline)
-			.fontWeight(.bold)
-			.padding(10)
+		var title = ""
+		var baseColor: Color = .blue
+		
+		if(text == nil) {
+			title = data?.text ?? ""
+		} else {
+			title = text ?? ""
+		}
+		
+		if(color == nil) {
+			baseColor = data?.color ?? .blue
+		} else {
+			baseColor = color ?? .blue
+		}
+		
+		return HStack {
+			Spacer()
+			Text(title)
+				.font(.subheadline)
+				.fontWeight(.bold)
+				.padding(10)
+				.foregroundColor(baseColor)
+			Spacer()
+		}
+		.overlay(
+			RoundedRectangle(cornerRadius: 6)
 			.foregroundColor(color)
-			.overlay(
-					RoundedRectangle(cornerRadius: 6)
-						.foregroundColor(color)
-						.opacity(colorScheme == ColorScheme.light ? 0.1 : 0.2)
-						.brightness(colorScheme == ColorScheme.light ? 0 : 0.4)
-			)
+			.opacity(colorScheme == ColorScheme.light ? 0.1 : 0.2)
+			.brightness(colorScheme == ColorScheme.light ? 0 : 0.4)
+		)
 	}
 }
 

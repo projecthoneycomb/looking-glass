@@ -10,8 +10,15 @@
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="weekOfMonth" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="year" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DiaryEntryText" inverseName="entry" inverseEntity="DiaryEntryText"/>
+    </entity>
+    <entity name="DiaryEntryText" representedClassName="DiaryEntryText" syncable="YES" codeGenerationType="category">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="entry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DiaryEntry" inverseName="entries" inverseEntity="DiaryEntry"/>
     </entity>
     <elements>
-        <element name="DiaryEntry" positionX="-63" positionY="-18" width="128" height="178"/>
+        <element name="DiaryEntry" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="DiaryEntryText" positionX="-63" positionY="54" width="128" height="88"/>
     </elements>
 </model>
