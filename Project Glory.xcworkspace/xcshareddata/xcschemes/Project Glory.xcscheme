@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1A2E8B1F233B884700BC113C"
-               BuildableName = "Project Glory.app"
+               BuildableName = "Looking Glass.app"
                BlueprintName = "Project Glory"
                ReferencedContainer = "container:Project Glory.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1A2E8B1F233B884700BC113C"
-            BuildableName = "Project Glory.app"
+            BuildableName = "Looking Glass.app"
             BlueprintName = "Project Glory"
             ReferencedContainer = "container:Project Glory.xcodeproj">
          </BuildableReference>
@@ -68,7 +68,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1A2E8B1F233B884700BC113C"
-            BuildableName = "Project Glory.app"
+            BuildableName = "Looking Glass.app"
             BlueprintName = "Project Glory"
             ReferencedContainer = "container:Project Glory.xcodeproj">
          </BuildableReference>
