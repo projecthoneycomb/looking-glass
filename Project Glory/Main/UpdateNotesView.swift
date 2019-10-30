@@ -19,25 +19,10 @@ struct UpdateNotesView: View {
 		ZStack {
 			HStack {
 				Image("LeftCelebrate")
-					.offset(x: -40 + ((UIScreen.main.bounds.width - 320) * 0.4), y: self.isAnimating ? -10 : 10)
-					.scaleEffect(self.isAnimating ? 1.05 : 1)
-					.rotationEffect(self.isAnimating ? Angle(degrees: 2) : Angle(degrees: -2))
-					.animation(
-						Animation.easeInOut(duration: 8)
-						.repeatForever()
-					)
+					.offset(x: -40 + ((UIScreen.main.bounds.width - 320) * 0.4), y: 0)
 				Spacer()
 				Image("RightCelebrate")
-					.offset(x: 40 - ((UIScreen.main.bounds.width - 320) * 0.4), y: self.isAnimating ? -14 : 6)
-					.scaleEffect(self.isAnimating ? 1.05 : 1)
-					.rotationEffect(self.isAnimating ? Angle(degrees: -2) : Angle(degrees: 2))
-					.animation(
-						Animation.easeInOut(duration: 11)
-						.repeatForever()
-					)
-			}
-			.onAppear {
-				self.isAnimating = true
+					.offset(x: 40 - ((UIScreen.main.bounds.width - 320) * 0.4), y: 0)
 			}
 			HStack {
 				Spacer()
@@ -64,8 +49,6 @@ struct UpdateNotesView_Previews: PreviewProvider {
     static var previews: some View {
 			Group {
 				UpdateNotesView(version: "1.0.3")
-				UpdateNotesView(version: "1.0.3")
-					.previewDevice(PreviewDevice(rawValue: "iPhone SE"))
 			}
     }
 }
