@@ -41,7 +41,7 @@ enum DayOfWeek: Int, CaseIterable {
 class SettingsService: ObservableObject {
 	@Published var authStatus: UNAuthorizationStatus = .notDetermined
 	@Published var daysOfWeekSettings: [[DayOfWeek: Bool]] = []
-	
+	@Published var optedOut: Bool = false
 	@Published var reminderDate: Date = Date()
 	
 	init() {
@@ -51,7 +51,7 @@ class SettingsService: ObservableObject {
 				self.authStatus = settings.authorizationStatus
 			}
 		}
-		
+		publishOptOut()
 		publishSettings()
 		publishTime()
 	}
@@ -72,17 +72,46 @@ class SettingsService: ObservableObject {
 		}
 	}
 	
+	func publishOptOut() {
+		let defaults = UserDefaults.standard
+		self.optedOut = defaults.bool(forKey: "optOutLogging")
+	}
+	
 	func toggleDay(day: DayOfWeek) {
 		let defaults = UserDefaults.standard
 		let current = defaults.bool(forKey: "DayOfWeek-\(day.rawValue)")
 		defaults.set(!current, forKey: "DayOfWeek-\(day.rawValue)")
 		
-		if(!current) {
-			scheduleNotificationFor(day: day, hour: 16, minute: 20)
-		}
-		
 		publishSettings()
 		scheduleNotifications()
+	}
+	
+	func setDefaults() {
+		let defaults = UserDefaults.standard
+		if(defaults.bool(forKey: "hasSetDefault")) {
+			return
+		}
+		
+		defaults.set(17, forKey: "ReminderHour")
+		defaults.set(0, forKey: "ReminderMin")
+		defaults.set(true, forKey: "DayOfWeek-2")
+		defaults.set(true, forKey: "DayOfWeek-3")
+		defaults.set(true, forKey: "DayOfWeek-4")
+		defaults.set(true, forKey: "DayOfWeek-5")
+		defaults.set(true, forKey: "DayOfWeek-6")
+		
+		defaults.set(true, forKey: "hasSetDefault")
+		
+		publishSettings()
+		publishTime()
+		scheduleNotifications()
+	}
+	
+	func toggleOptIn() -> Void {
+		let defaults = UserDefaults.standard
+		let current = defaults.bool(forKey: "optOutLogging")
+		defaults.set(!current, forKey: "optOutLogging")
+		publishOptOut()
 	}
 	
 	func changeTime(newDate: Date) {

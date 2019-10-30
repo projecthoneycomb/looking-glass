@@ -21,10 +21,7 @@ struct DiaryEntryView: View {
 		let texts: [DiaryEntryText] = Array(entry.entries ?? Set())
 		
 		return ZStack(alignment: .top) {
-			DiaryDecorationView()
 			VStack(alignment: .leading) {
-				Spacer()
-					.frame(height: 100)
 				HStack(alignment: .center, spacing: 10) {
 					ForEach(Attribute(rawValue: entry.attribute)?.toTags() ?? [], id: \.self) { (tag: TagData) in
 						Tag(color: tag.color, text: tag.text)

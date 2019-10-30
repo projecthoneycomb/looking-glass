@@ -19,9 +19,12 @@ class MainService: ObservableObject {
 	@Published var currentSelection: Int = 0
 	var currentVersion: String
 	@Published var updateModelState: Bool?
+	@Published var hasBeenOnboarded: Bool
 	
 	init(version: String) {
+		let defaults = UserDefaults.standard
 		self.currentVersion = version
+		self.hasBeenOnboarded = defaults.bool(forKey: "isOnboarded")
 		LogService.startup(version: version)
 		NotificationCenter.default.addObserver(self, selector: #selector(self.handleNotification), name: .onNotificationStart, object: nil)
 	}
@@ -35,6 +38,12 @@ class MainService: ObservableObject {
 	
 	func clearState() {
 		notificationStart = false
+	}
+	
+	func setOnboardedState() {
+		let defaults = UserDefaults.standard
+		defaults.set(true, forKey: "isOnboarded")
+		hasBeenOnboarded = true
 	}
 }
 
@@ -63,7 +72,11 @@ struct ContentView: View {
 			self.mainService.currentSelection = newVal
 		})
 		
-		return TabView(selection: smartSelection) {
+		if(!self.mainService.hasBeenOnboarded) {
+			return AnyView(OnboardingView(cb: { self.mainService.setOnboardedState() }))
+		}
+		
+		return AnyView(TabView(selection: smartSelection) {
 			MainTabView()
 				.tabItem {
 					Image(systemName: "house.fill")
@@ -84,6 +97,7 @@ struct ContentView: View {
 				.tag(2)
 		}.edgesIgnoringSafeArea(.top)
 		.accentColor(Color("hc-main"))
+		)
 	}
 }
 

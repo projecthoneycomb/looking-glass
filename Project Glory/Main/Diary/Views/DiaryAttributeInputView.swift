@@ -67,49 +67,38 @@ struct DiaryAttributeInputView: View {
 						.frame(width: 20, height: 20, alignment: .center)
 					}
 				}
-				ScrollView(.vertical, showsIndicators: false) {
-					VStack(alignment: .leading) {
-						Text(date)
-							.font(.subheadline)
-						
-						Group {
-							if (self.inputStage == .attributeInput) {
-								AttributeSelection(currentlySelectedAttribute: self.$currentlySelectedAttribute)
-							} else if (self.inputStage == .textInput) {
-								DiaryTextInput(currentText: self.$currentText, currentTitle: self.$currentTitle, placeholderTitle: self.currentlySelectedAttribute?.toDescription())
-							} else if (self.inputStage == .notImplemented) {
-								VStack {
-									Spacer()
-									Image(systemName: "pencil")
-										.resizable()
-										.scaledToFit()
-										.padding(.horizontal, 40)
-									Text("Adding to entries will be coming soon!")
-										.font(.title)
-										.fontWeight(.semibold)
-										.multilineTextAlignment(.center)
-									Spacer()
-								}
-								.foregroundColor(Color("hc-main"))
-								.padding(.horizontal, 60)
+				VStack(alignment: .leading) {
+					Text(date)
+						.font(.subheadline)
+					
+					Group {
+						if (self.inputStage == .attributeInput) {
+							AttributeSelection(currentlySelectedAttribute: self.$currentlySelectedAttribute)
+						} else if (self.inputStage == .textInput) {
+							DiaryTextInput(currentText: self.$currentText, currentTitle: self.$currentTitle, placeholderTitle: self.currentlySelectedAttribute?.toDescription())
+						} else if (self.inputStage == .notImplemented) {
+							VStack {
+								Spacer()
+								Image(systemName: "pencil")
+									.resizable()
+									.scaledToFit()
+									.padding(.horizontal, 40)
+								Text("Adding to entries will be coming soon!")
+									.font(.title)
+									.fontWeight(.semibold)
+									.multilineTextAlignment(.center)
+								Spacer()
 							}
+							.foregroundColor(Color("hc-main"))
+							.padding(.horizontal, 60)
 						}
-						.transition(.slideAndFade)
-						.animation(.spring())
-						
-						Text("The more thoughts you add, the more tags can be automatically suggested to you.")
-							.font(.footnote)
-							.foregroundColor(.secondary)
-							.multilineTextAlignment(.center)
-							.padding(EdgeInsets(top: 15, leading: 20, bottom: 0, trailing: 20))
-							.layoutPriority(1)
-						
-						TagGridView(tags: (0...4).map { (number: Int) in TagData(text: "Heather", color: .blue) })
-						
-						Spacer()
-							.frame(minHeight: 10)
-						
 					}
+					.transition(.slideAndFade)
+					.animation(.spring())
+										
+					Spacer()
+						.frame(minHeight: 10)
+					
 				}
 				
 				if (self.inputStage == .attributeInput) {

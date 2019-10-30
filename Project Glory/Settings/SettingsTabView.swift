@@ -13,44 +13,24 @@ struct SettingsTabView: View {
 	@ObservedObject var settingsService: SettingsService = SettingsService()
 		
 	var body: some View {
-		let timeOfReminders: Binding<Date> = Binding<Date>( get: { self.settingsService.reminderDate }, set: { newVal in self.settingsService.changeTime(newDate: newVal) })
 		return NavigationView {
-			VStack(alignment: .leading, spacing: 10) {
-				Text("What days do you want to be reminded?")
-					.fontWeight(.bold)
-				HStack {
-					ForEach(settingsService.daysOfWeekSettings, id: \.self) { (day: [DayOfWeek: Bool]) in
-						Button(action: { self.settingsService.toggleDay(day: day.keys.first!) }) {
-							Spacer()
-							Text(day.keys.first!.toLabel())
-								.foregroundColor(day.values.first! ? Color.white : Color("hc-main"))
-								.fontWeight(.bold)
-							Spacer()
-						}
-						.frame(height: 45)
-						.background(day.values.first! ? Color("hc-main") : Color("background"))
-					}
-					.animation(.easeInOut(duration: 0.1))
-				}
-				.cornerRadius(6)
-				.navigationBarTitle(Text("Settings ⚙️"))
-
+			VStack(alignment: .leading, spacing: 15) {
+				NotificationConfigurationView()
 				Spacer()
-					.frame(height: 20)
-				
-				Text("What time do you want to be reminded?")
-					.fontWeight(.bold)
-				
-				HStack {
-					Spacer()
-					DatePicker(selection: timeOfReminders, displayedComponents: .hourAndMinute) {
-						Text("")
-					}
-					Spacer()
-				}
-				Spacer()
+				BasicButton(action: openTestflight, style: .branded, label: "Send feedback")
+				BasicButton(action: { self.settingsService.toggleOptIn() }, style: .basic, label: self.settingsService.optedOut ? "Opt in to anonymous logging" : "Opt out of anonymous logging")
 			}
 			.padding(30)
+
+			.navigationBarTitle(Text("Settings"))
+		}
+	}
+	
+	func openTestflight() {
+		if let customAppURL = URL(string: "itms-beta://"){
+				if(UIApplication.shared.canOpenURL(customAppURL)){
+					UIApplication.shared.open(URL(string: "https://beta.itunes.apple.com/v1/app/1482401458")!)
+				}
 		}
 	}
 }

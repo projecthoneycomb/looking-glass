@@ -46,6 +46,11 @@ class LogService {
 	}
 	
 	static func event(names: [String]) {
+		let defaults = UserDefaults.standard
+		if(defaults.bool(forKey: "optOutLogging")) {
+			return
+		}
+		
 		let eventData = EventData(events: names)
 
 		guard let jsonData = try? encoder.encode(eventData) else {
