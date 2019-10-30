@@ -59,6 +59,21 @@ enum OnboardingState {
 			return .thankyou
 		}
 	}
+	
+	func previousPage() -> OnboardingState {
+		switch self {
+		case .thankyou:
+			return .thankyou
+		case .privacy:
+			return .thankyou
+		case .notifications:
+			return .privacy
+		case .feedback:
+			return .notifications
+		case .completed:
+			return .feedback
+		}
+	}
 }
 
 struct OnboardingView: View {
@@ -66,6 +81,13 @@ struct OnboardingView: View {
 	var cb: () -> Void
 	var body: some View {
 		VStack {
+			HStack {
+				Button(action: reverseOnboarding) {
+					Text(currentState != .thankyou ? "Back" : "")
+						.foregroundColor(Color("hc-main"))
+				}
+				Spacer()
+			}
 			Text(currentState.toEmoji())
 				.font(.system(size: 40))
 				.padding(5)
@@ -126,6 +148,10 @@ struct OnboardingView: View {
 		if(currentState == .completed) {
 			cb()
 		}
+	}
+	
+	func reverseOnboarding() {
+		currentState = currentState.previousPage()
 	}
 	
 	func openEventLink() {

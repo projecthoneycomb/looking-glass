@@ -24,7 +24,7 @@ class MainService: ObservableObject {
 	init(version: String) {
 		let defaults = UserDefaults.standard
 		self.currentVersion = version
-		self.hasBeenOnboarded = defaults.bool(forKey: "isOnboarded")
+		self.hasBeenOnboarded = defaults.bool(forKey: "isOnboardedv2")
 		LogService.startup(version: version)
 		NotificationCenter.default.addObserver(self, selector: #selector(self.handleNotification), name: .onNotificationStart, object: nil)
 	}
@@ -42,7 +42,7 @@ class MainService: ObservableObject {
 	
 	func setOnboardedState() {
 		let defaults = UserDefaults.standard
-		defaults.set(true, forKey: "isOnboarded")
+		defaults.set(true, forKey: "isOnboardedv2")
 		hasBeenOnboarded = true
 	}
 }
