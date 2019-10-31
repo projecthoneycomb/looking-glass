@@ -80,7 +80,7 @@ enum Attribute: Int16, CaseIterable {
 		}
 	}
 	
-	func toPoints() -> Int {
+	func toPoints() -> Double {
 		switch self {
 		case .amazing:
 			return 3

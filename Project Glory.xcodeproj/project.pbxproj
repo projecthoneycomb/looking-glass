@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0602002369DCF200ADB2DC /* 1.1.1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A0601FF2369DCF200ADB2DC /* 1.1.1.txt */; };
+		1A0602012369DD3D00ADB2DC /* DecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0FBAE23687B2C004768AA /* DecorationView.swift */; };
+		1A0602032369E0A400ADB2DC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0602022369E0A400ADB2DC /* CardView.swift */; };
 		1A08814123462204004B1690 /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08814023462204004B1690 /* BigButton.swift */; };
 		1A2E8B24233B884700BC113C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E8B23233B884700BC113C /* AppDelegate.swift */; };
 		1A2E8B26233B884700BC113C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E8B25233B884700BC113C /* SceneDelegate.swift */; };
@@ -30,10 +33,9 @@
 		1A608F95235F4B90007E10C7 /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E36233CF16800C6E918 /* SettingsTabView.swift */; };
 		1A608F96235F4B90007E10C7 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E32233CEC4600C6E918 /* MainTabView.swift */; };
 		1A608F97235F4B90007E10C7 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6935235C7DCB0006910D /* LogService.swift */; };
-		1A608F98235F4B90007E10C7 /* CompassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A791C402347927C004C54BF /* CompassService.swift */; };
 		1A608F99235F4B90007E10C7 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6940235DC61A0006910D /* Tag.swift */; };
 		1A608F9A235F4B90007E10C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E8B25233B884700BC113C /* SceneDelegate.swift */; };
-		1A608F9B235F4B90007E10C7 /* CompassTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E34233CF15C00C6E918 /* CompassTabView.swift */; };
+		1A608F9B235F4B90007E10C7 /* ReflectionTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E34233CF15C00C6E918 /* ReflectionTabView.swift */; };
 		1A608F9C235F4B90007E10C7 /* CompassTabPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA3991234764E100ED6546 /* CompassTabPlaceholderView.swift */; };
 		1A608F9D235F4B90007E10C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E8B2A233B884700BC113C /* ContentView.swift */; };
 		1A608F9E235F4B90007E10C7 /* DiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4EDBD233E5D24007A1753 /* DiaryEntry.swift */; };
@@ -46,7 +48,6 @@
 		1A608FA7235F4B90007E10C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2E8B2C233B884900BC113C /* Assets.xcassets */; };
 		1A608FA8235F4B90007E10C7 /* 1.0.3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1AEF693E235CA64F0006910D /* 1.0.3.txt */; };
 		1A791C3F234773C8004C54BF /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A791C3E234773C8004C54BF /* Attribute.swift */; };
-		1A791C412347927C004C54BF /* CompassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A791C402347927C004C54BF /* CompassService.swift */; };
 		1A791C4323479BFE004C54BF /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A791C4223479BFE004C54BF /* SettingsService.swift */; };
 		1A99BD8623671FB5004A82E6 /* TagGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A99BD8523671FB5004A82E6 /* TagGridView.swift */; };
 		1AA16243235E10EA00BCC63B /* DiaryEntryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA16242235E10EA00BCC63B /* DiaryEntryTextField.swift */; };
@@ -56,14 +57,16 @@
 		1AA52E2F233BB24600C6E918 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E2E233BB24600C6E918 /* WeekView.swift */; };
 		1AA52E31233BCE9700C6E918 /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E30233BCE9700C6E918 /* ArrowView.swift */; };
 		1AA52E33233CEC4600C6E918 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E32233CEC4600C6E918 /* MainTabView.swift */; };
-		1AA52E35233CF15C00C6E918 /* CompassTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E34233CF15C00C6E918 /* CompassTabView.swift */; };
+		1AA52E35233CF15C00C6E918 /* ReflectionTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E34233CF15C00C6E918 /* ReflectionTabView.swift */; };
 		1AA52E37233CF16800C6E918 /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA52E36233CF16800C6E918 /* SettingsTabView.swift */; };
-		1AB0FBAF23687B2C004768AA /* DiaryDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0FBAE23687B2C004768AA /* DiaryDecorationView.swift */; };
+		1AB0FBAF23687B2C004768AA /* DecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0FBAE23687B2C004768AA /* DecorationView.swift */; };
 		1AB0FBB22369A125004768AA /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0FBB12369A125004768AA /* OnboardingView.swift */; };
 		1AB0FBB52369A86B004768AA /* NotificationConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0FBB42369A86B004768AA /* NotificationConfigurationView.swift */; };
 		1AB229F5236710AB001F6B6E /* BasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB229F4236710AB001F6B6E /* BasicButton.swift */; };
 		1ABA3992234764E100ED6546 /* CompassTabPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA3991234764E100ED6546 /* CompassTabPlaceholderView.swift */; };
 		1ABA3994234765B700ED6546 /* SettingsTabPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA3993234765B700ED6546 /* SettingsTabPlaceholderView.swift */; };
+		1ABDD4212369ED3400CFAE3E /* ReflectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDD4202369ED3400CFAE3E /* ReflectionService.swift */; };
+		1ABDD424236B002200CFAE3E /* SigmaSwiftStatistics in Frameworks */ = {isa = PBXBuildFile; productRef = 1ABDD423236B002200CFAE3E /* SigmaSwiftStatistics */; };
 		1AC26CFF2360A07A0097AFAD /* 1.1.0.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1AC26CFE2360A07A0097AFAD /* 1.1.0.txt */; };
 		1AEF6936235C7DCB0006910D /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6935235C7DCB0006910D /* LogService.swift */; };
 		1AEF6938235C8BFD0006910D /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEF6937235C8BFD0006910D /* UpdateService.swift */; };
@@ -73,6 +76,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A0601FF2369DCF200ADB2DC /* 1.1.1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 1.1.1.txt; sourceTree = "<group>"; };
+		1A0602022369E0A400ADB2DC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		1A08814023462204004B1690 /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
 		1A2E8B20233B884700BC113C /* Looking Glass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Looking Glass.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2E8B23233B884700BC113C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,7 +97,6 @@
 		1A608FAC235F4B90007E10C7 /* Project Glory Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Glory Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A608FAD235F4B90007E10C7 /* Project Glory copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Project Glory copy-Info.plist"; path = "/Users/james/Documents/Projects/projectglory/Project Glory copy-Info.plist"; sourceTree = "<absolute>"; };
 		1A791C3E234773C8004C54BF /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
-		1A791C402347927C004C54BF /* CompassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassService.swift; sourceTree = "<group>"; };
 		1A791C4223479BFE004C54BF /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		1A791C442347A484004C54BF /* Project Glory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project Glory.entitlements"; sourceTree = "<group>"; };
 		1A99BD8523671FB5004A82E6 /* TagGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGridView.swift; sourceTree = "<group>"; };
@@ -103,14 +107,15 @@
 		1AA52E2E233BB24600C6E918 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		1AA52E30233BCE9700C6E918 /* ArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
 		1AA52E32233CEC4600C6E918 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		1AA52E34233CF15C00C6E918 /* CompassTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassTabView.swift; sourceTree = "<group>"; };
+		1AA52E34233CF15C00C6E918 /* ReflectionTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionTabView.swift; sourceTree = "<group>"; };
 		1AA52E36233CF16800C6E918 /* SettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabView.swift; sourceTree = "<group>"; };
-		1AB0FBAE23687B2C004768AA /* DiaryDecorationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDecorationView.swift; sourceTree = "<group>"; };
+		1AB0FBAE23687B2C004768AA /* DecorationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationView.swift; sourceTree = "<group>"; };
 		1AB0FBB12369A125004768AA /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		1AB0FBB42369A86B004768AA /* NotificationConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationConfigurationView.swift; sourceTree = "<group>"; };
 		1AB229F4236710AB001F6B6E /* BasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButton.swift; sourceTree = "<group>"; };
 		1ABA3991234764E100ED6546 /* CompassTabPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassTabPlaceholderView.swift; sourceTree = "<group>"; };
 		1ABA3993234765B700ED6546 /* SettingsTabPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabPlaceholderView.swift; sourceTree = "<group>"; };
+		1ABDD4202369ED3400CFAE3E /* ReflectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionService.swift; sourceTree = "<group>"; };
 		1AC26CFE2360A07A0097AFAD /* 1.1.0.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 1.1.0.txt; sourceTree = "<group>"; };
 		1AEF6935235C7DCB0006910D /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		1AEF6937235C8BFD0006910D /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
@@ -125,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A608F87235F49DE007E10C7 /* CloudKit.framework in Frameworks */,
+				1ABDD424236B002200CFAE3E /* SigmaSwiftStatistics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +182,7 @@
 				1AEF6939235C90600006910D /* Updates */,
 				1A791C442347A484004C54BF /* Project Glory.entitlements */,
 				1ABF5323233E10F30043CD80 /* Shared Views */,
-				1ABF5322233E10EB0043CD80 /* Compass */,
+				1ABF5322233E10EB0043CD80 /* Reflection */,
 				1ABF5321233E10E20043CD80 /* Settings */,
 				1A1E29F7233E0FBF00BC9B2A /* Main */,
 				1A2E8B23233B884700BC113C /* AppDelegate.swift */,
@@ -210,8 +216,6 @@
 				1AA16242235E10EA00BCC63B /* DiaryEntryTextField.swift */,
 				1A35A7D123673F340042C9A3 /* DiaryEntryView.swift */,
 				1A35A7D223673F340042C9A3 /* DiaryTodayButton.swift */,
-				1AA4EDBA233E2BFE007A1753 /* DiaryService.swift */,
-				1AB0FBAE23687B2C004768AA /* DiaryDecorationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,6 +231,7 @@
 		1A789E24236087D8001C6E24 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				1AA4EDBA233E2BFE007A1753 /* DiaryService.swift */,
 				1A35A7D5236742AC0042C9A3 /* Views */,
 			);
 			path = Diary;
@@ -268,25 +273,27 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		1ABF5322233E10EB0043CD80 /* Compass */ = {
+		1ABF5322233E10EB0043CD80 /* Reflection */ = {
 			isa = PBXGroup;
 			children = (
 				1AA52E30233BCE9700C6E918 /* ArrowView.swift */,
-				1AA52E34233CF15C00C6E918 /* CompassTabView.swift */,
+				1AA52E34233CF15C00C6E918 /* ReflectionTabView.swift */,
 				1ABA3991234764E100ED6546 /* CompassTabPlaceholderView.swift */,
-				1A791C402347927C004C54BF /* CompassService.swift */,
+				1ABDD4202369ED3400CFAE3E /* ReflectionService.swift */,
 			);
-			path = Compass;
+			path = Reflection;
 			sourceTree = "<group>";
 		};
 		1ABF5323233E10F30043CD80 /* Shared Views */ = {
 			isa = PBXGroup;
 			children = (
+				1AB0FBAE23687B2C004768AA /* DecorationView.swift */,
 				1AEF6940235DC61A0006910D /* Tag.swift */,
 				1AA52E2E233BB24600C6E918 /* WeekView.swift */,
 				1AB229F4236710AB001F6B6E /* BasicButton.swift */,
 				1A99BD8523671FB5004A82E6 /* TagGridView.swift */,
 				1A35A7D623675F220042C9A3 /* TagButton.swift */,
+				1A0602022369E0A400ADB2DC /* CardView.swift */,
 			);
 			path = "Shared Views";
 			sourceTree = "<group>";
@@ -297,6 +304,7 @@
 				1AEF693E235CA64F0006910D /* 1.0.3.txt */,
 				1A529870235F57600079CDB4 /* 1.0.4.txt */,
 				1AC26CFE2360A07A0097AFAD /* 1.1.0.txt */,
+				1A0601FF2369DCF200ADB2DC /* 1.1.1.txt */,
 			);
 			path = Updates;
 			sourceTree = "<group>";
@@ -318,6 +326,7 @@
 			);
 			name = "Project Glory";
 			packageProductDependencies = (
+				1ABDD423236B002200CFAE3E /* SigmaSwiftStatistics */,
 			);
 			productName = projectglory;
 			productReference = 1A2E8B20233B884700BC113C /* Looking Glass.app */;
@@ -367,6 +376,7 @@
 			);
 			mainGroup = 1A2E8B17233B884700BC113C;
 			packageReferences = (
+				1ABDD422236B002200CFAE3E /* XCRemoteSwiftPackageReference "SigmaSwiftStatistics" */,
 			);
 			productRefGroup = 1A2E8B21233B884700BC113C /* Products */;
 			projectDirPath = "";
@@ -388,6 +398,7 @@
 				1A2E8B33233B884900BC113C /* LaunchScreen.storyboard in Resources */,
 				1A2E8B30233B884900BC113C /* Preview Assets.xcassets in Resources */,
 				1A2E8B2D233B884900BC113C /* Assets.xcassets in Resources */,
+				1A0602002369DCF200ADB2DC /* 1.1.1.txt in Resources */,
 				1AEF693F235CA64F0006910D /* 1.0.3.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,19 +439,20 @@
 				1AA52E33233CEC4600C6E918 /* MainTabView.swift in Sources */,
 				1A35A7D423673F340042C9A3 /* DiaryTodayButton.swift in Sources */,
 				1AEF6936235C7DCB0006910D /* LogService.swift in Sources */,
-				1AB0FBAF23687B2C004768AA /* DiaryDecorationView.swift in Sources */,
-				1A791C412347927C004C54BF /* CompassService.swift in Sources */,
+				1AB0FBAF23687B2C004768AA /* DecorationView.swift in Sources */,
 				1AB0FBB22369A125004768AA /* OnboardingView.swift in Sources */,
 				1AEF6941235DC61A0006910D /* Tag.swift in Sources */,
 				1A2E8B26233B884700BC113C /* SceneDelegate.swift in Sources */,
-				1AA52E35233CF15C00C6E918 /* CompassTabView.swift in Sources */,
+				1AA52E35233CF15C00C6E918 /* ReflectionTabView.swift in Sources */,
 				1AB0FBB52369A86B004768AA /* NotificationConfigurationView.swift in Sources */,
+				1ABDD4212369ED3400CFAE3E /* ReflectionService.swift in Sources */,
 				1ABA3992234764E100ED6546 /* CompassTabPlaceholderView.swift in Sources */,
 				1A35A7D323673F340042C9A3 /* DiaryEntryView.swift in Sources */,
 				1A2E8B2B233B884700BC113C /* ContentView.swift in Sources */,
 				1AA4EDBE233E5D24007A1753 /* DiaryEntry.swift in Sources */,
 				1A791C3F234773C8004C54BF /* Attribute.swift in Sources */,
 				1A2E8B29233B884700BC113C /* projectglory.xcdatamodeld in Sources */,
+				1A0602032369E0A400ADB2DC /* CardView.swift in Sources */,
 				1A791C4323479BFE004C54BF /* SettingsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,11 +469,11 @@
 				1A608F94235F4B90007E10C7 /* ArrowView.swift in Sources */,
 				1A608F95235F4B90007E10C7 /* SettingsTabView.swift in Sources */,
 				1A608F96235F4B90007E10C7 /* MainTabView.swift in Sources */,
+				1A0602012369DD3D00ADB2DC /* DecorationView.swift in Sources */,
 				1A608F97235F4B90007E10C7 /* LogService.swift in Sources */,
-				1A608F98235F4B90007E10C7 /* CompassService.swift in Sources */,
 				1A608F99235F4B90007E10C7 /* Tag.swift in Sources */,
 				1A608F9A235F4B90007E10C7 /* SceneDelegate.swift in Sources */,
-				1A608F9B235F4B90007E10C7 /* CompassTabView.swift in Sources */,
+				1A608F9B235F4B90007E10C7 /* ReflectionTabView.swift in Sources */,
 				1A608F9C235F4B90007E10C7 /* CompassTabPlaceholderView.swift in Sources */,
 				1A608F9D235F4B90007E10C7 /* ContentView.swift in Sources */,
 				1A608F9E235F4B90007E10C7 /* DiaryEntry.swift in Sources */,
@@ -615,7 +627,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.projecthoneycomb.projectglory;
 				PRODUCT_NAME = "Looking Glass";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -641,7 +653,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.projecthoneycomb.projectglory;
 				PRODUCT_NAME = "Looking Glass";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -734,6 +746,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1ABDD422236B002200CFAE3E /* XCRemoteSwiftPackageReference "SigmaSwiftStatistics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/SigmaSwiftStatistics.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1ABDD423236B002200CFAE3E /* SigmaSwiftStatistics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1ABDD422236B002200CFAE3E /* XCRemoteSwiftPackageReference "SigmaSwiftStatistics" */;
+			productName = SigmaSwiftStatistics;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		1A2E8B27233B884700BC113C /* projectglory.xcdatamodeld */ = {

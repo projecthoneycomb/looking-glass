@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-func calculateAngleFromScore(input: Int) -> Double {
+func calculateAngleFromScore2(input: Int) -> Double {
 	var score = CGFloat(input)
 	var isNegative = false
 	if(score < 0) {
@@ -40,7 +40,7 @@ struct ArrowView: View {
 				Circle()
 					.frame(width: 25)
 			}
-			.rotationEffect(.init(degrees: calculateAngleFromScore(input: input)))
+			.rotationEffect(.init(degrees: calculateAngleFromScore2(input: input)))
 			.animation(.easeInOut(duration: 0.2))
 		}
 				

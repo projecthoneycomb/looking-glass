@@ -12,7 +12,7 @@ struct WeekView: View {
 	let spacing: CGFloat = 40.0
 		@State var week: [Day]
     var body: some View {
-			HStack(alignment: .center, spacing: 10) {
+			HStack(alignment: .center, spacing: 5) {
 				Group {
 					ForEach(week) { day -> AnyView in
 						guard let attribute = day.attribute else {

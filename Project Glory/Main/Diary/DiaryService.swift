@@ -36,7 +36,7 @@ class DiaryService: ObservableObject {
 
 	func formatDiaryData(entries: FetchedResults<DiaryEntry>) -> [Month] {
 		guard let startingEntry = entries.first else {
-			return []
+			return generateBaseDateData(startingDay: Date(), entries: entries)
 		}
 		return generateBaseDateData(startingDay: startingEntry.createdAt, entries: entries)
 	}

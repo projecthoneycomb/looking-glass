@@ -83,10 +83,10 @@ struct ContentView: View {
 					Text("Home")
 				}
 				.tag(0)
-			CompassTabPlaceholderView()
+			ReflectionTabView()
 				.tabItem {
 					Image(systemName: "location.fill")
-					Text("Compass")
+					Text("Reflection")
 				}
 				.tag(1)
 			SettingsTabView()

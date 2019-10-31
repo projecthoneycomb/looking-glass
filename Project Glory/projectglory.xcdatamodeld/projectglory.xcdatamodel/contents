@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19A573a" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19A573a" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="DiaryEntry" representedClassName=".DiaryEntry" syncable="YES">
         <attribute name="attribute" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="body" optional="YES" attributeType="String"/>
@@ -8,6 +8,7 @@
         <attribute name="monthOfYear" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="version" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="weekOfMonth" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="year" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DiaryEntryText" inverseName="entry" inverseEntity="DiaryEntryText"/>
@@ -18,7 +19,7 @@
         <relationship name="entry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DiaryEntry" inverseName="entries" inverseEntity="DiaryEntry"/>
     </entity>
     <elements>
-        <element name="DiaryEntry" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="DiaryEntry" positionX="-63" positionY="-18" width="128" height="208"/>
         <element name="DiaryEntryText" positionX="-63" positionY="54" width="128" height="88"/>
     </elements>
 </model>

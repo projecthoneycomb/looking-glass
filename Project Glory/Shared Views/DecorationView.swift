@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct DiaryDecorationView: View {
+struct DecorationView: View {
 	var body: some View {
 		VStack {
 			HStack {
@@ -22,21 +22,21 @@ struct DiaryDecorationView: View {
 	}
 }
 
-struct DiaryDecorationView_Previews: PreviewProvider {
+struct DecorationView_Previews: PreviewProvider {
     static var previews: some View {
 		Group {
 			Group {
-				DiaryDecorationView()
+				DecorationView()
 				Group {
-					DiaryDecorationView()
+					DecorationView()
 				}
 				.background(Color.black)
 			}
 			.previewDevice(.init(rawValue: "iPhone 11 Pro Max"))
 			Group {
-				DiaryDecorationView()
+				DecorationView()
 				Group {
-					DiaryDecorationView()
+					DecorationView()
 				}
 				.background(Color.black)
 			}

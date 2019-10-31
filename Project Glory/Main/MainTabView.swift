@@ -44,24 +44,36 @@ struct MainTabView: View {
 					if(UpdateService.isUpdated(currentVersion: self.mainService.currentVersion)) {
 						UpdateNotesView(version: self.mainService.currentVersion)
 					}
-					HStack {
-						Spacer()
-						VStack(alignment: .leading, spacing: 10) {
-							ForEach(formattedEntries) {	(month: Month) in
-								VStack(alignment: .leading) {
-									Text(month.name)
-										.font(.title)
-										.fontWeight(.bold)
-									ForEach(month.weeks) { (week: Week) in
-											WeekView(week: week.days)
-												.padding(EdgeInsets(top: 4, leading: 3, bottom: 4, trailing: 3))
+					ZStack {
+						HStack {
+							Spacer()
+							VStack(alignment: .leading, spacing: 10) {
+								ForEach(formattedEntries) {	(month: Month) in
+									VStack(alignment: .leading) {
+										Text(month.name)
+											.font(.title)
+											.fontWeight(.bold)
+										ForEach(month.weeks) { (week: Week) in
+												WeekView(week: week.days)
+													.padding(EdgeInsets(top: 1, leading: 3, bottom: 1, trailing: 3))
+										}
 									}
 								}
 							}
+							Spacer()
 						}
-						Spacer()
+						.padding(EdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 20))
+						.opacity(self.diaryEntries.count == 0 ? 0.6 : 1)
+						.blur(radius: self.diaryEntries.count == 0 ? 3 : 0, opaque: false)
+						
+						if(self.diaryEntries.count == 0) {
+							Text("This will start to fill up as you add entries to your journal. Wait until your first nudge or tap on the button above to start!")
+								.multilineTextAlignment(.center)
+								.padding(50)
+						}
+						
 					}
-					.padding(EdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 20))
+					
 				}
 				.padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
 				.navigationBarTitle(Text("Home"))

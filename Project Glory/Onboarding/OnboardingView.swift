@@ -80,67 +80,68 @@ struct OnboardingView: View {
 	@State var currentState: OnboardingState = .thankyou
 	var cb: () -> Void
 	var body: some View {
-		VStack {
-			HStack {
-				Button(action: reverseOnboarding) {
-					Text(currentState != .thankyou ? "Back" : "")
-						.foregroundColor(Color("hc-main"))
-				}
-				Spacer()
+		ZStack {
+			Button(action: reverseOnboarding) {
+				Text(currentState != .thankyou ? "Back" : "")
+					.foregroundColor(Color("hc-main"))
 			}
-			Text(currentState.toEmoji())
-				.font(.system(size: 40))
-				.padding(5)
-			Text(currentState.toTitle())
-			.font(.title)
-			.fontWeight(.bold)
-			
-			Group {
-				if(currentState == .thankyou) {
-					Text("Thank you so much for trying out the Project Looking-Glass beta.")
-				}
+			.position(x: 60, y: 20)
+			VStack {
+				Text(currentState.toEmoji())
+					.font(.system(size: 40))
+					.padding(5)
+				Text(currentState.toTitle())
+				.font(.title)
+				.fontWeight(.bold)
 				
-				if(currentState == .privacy) {
-					Text("We do not store, transfer or see any of your data that you enter into this app.")
-						.fontWeight(.bold)
-					Text("If you use iCloud then your data will be backed up to Apple’s servers where Honeycomb can not see it.")
-					Text("We have anonymous logging in the app that tells us how you are using the app. This helps us know how we can improve.")
-					Button(action: openEventLink) {
-						Text("To see a full list of events & the source code of this app tap here.")
+				Group {
+					if(currentState == .thankyou) {
+						Text("Thank you so much for trying out the Project Looking-Glass beta.")
+					}
+					
+					if(currentState == .privacy) {
+						Text("We do not store, transfer or see any of your data that you enter into this app.")
+							.fontWeight(.bold)
+						Text("If you use iCloud then your data will be backed up to Apple’s servers where Honeycomb can not see it.")
+						Text("We have anonymous logging in the app that tells us how you are using the app. This helps us know how we can improve.")
+						Button(action: openEventLink) {
+							Text("To see a full list of events & the source code of this app tap here.")
+								.font(.footnote)
+								.padding(.horizontal, 40)
+						}
+						Text("You can opt out at any time in settings.")
 							.font(.footnote)
 							.padding(.horizontal, 40)
 					}
-					Text("You can opt out at any time in settings.")
-						.font(.footnote)
-						.padding(.horizontal, 40)
-				}
-				
-				if(currentState == .notifications) {
-					Group {
-						Text("Sometimes, you need a nudge to do the right thing and we can be that for you.")
-						.layoutPriority(1)
-						Text("When do you want to be asked how your day went?")
-						.layoutPriority(1)
-						Text("We’ve preselected week days for you.")
-							.font(.footnote)
-							.foregroundColor(.secondary)
+					
+					if(currentState == .notifications) {
+						Group {
+							Text("Sometimes, you need a nudge to do the right thing and we can be that for you.")
+							.layoutPriority(1)
+							Text("When do you want to be asked how your day went?")
+							.layoutPriority(1)
+							Text("We’ve preselected week days for you.")
+								.font(.footnote)
+								.foregroundColor(.secondary)
+						}
+						NotificationConfigurationView()
 					}
-					NotificationConfigurationView()
-				}
 
-				
-				if(currentState == .feedback) {
-					Text("And finally, we would love any and all feedback you have about Project Looking-Glass.")
-					Text("At any point in the settings tab you can tap the “Send feedback” button and we’ll get right to it.")
+					
+					if(currentState == .feedback) {
+						Text("And finally, we would love any and all feedback you have about Project Looking-Glass.")
+						Text("At any point in the settings tab you can tap the “Send feedback” button and we’ll get right to it.")
+					}
 				}
+				.padding(10)
+				.multilineTextAlignment(.center)
+				
+				Spacer()
+				BasicButton(action: progressOnboarding, style: .branded, label: currentState == .feedback ? "Done" : "Next")
 			}
-			.padding(10)
-			.multilineTextAlignment(.center)
-			
-			Spacer()
-			BasicButton(action: progressOnboarding, style: .branded, label: currentState == .feedback ? "Done" : "Next")
+			.frame(width: UIScreen.main.bounds.width - 30)
+			.padding(30)
 		}
-		.padding(30)
 	}
 	
 	func progressOnboarding() {
