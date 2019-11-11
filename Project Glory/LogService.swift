@@ -11,65 +11,83 @@ import Foundation
 class LogService {
 	
 	private struct EventData: Encodable {
-			let v: Int = 1
-			let ua: String = "ios"
-			let platform: String = "ios"
-			#if targetEnvironment(simulator)
-			let hostname: String = "sim.projectglory.projecthoneycomb.org"
-			#else
-			let hostname: String = "projectglory.projecthoneycomb.org"
-			#endif
-			let date: Date = Date()
-			let events: [String]
+			let anonymousId: UUID = UUID()
+			let timestamp: Date = Date()
+			let event: String
+	}
+	
+	private struct ScreenData: Encodable {
+			let anonymousId: UUID = UUID()
+			let timestamp: Date = Date()
+			let name: String
 	}
 	
 	private static let encoder: JSONEncoder = {
 			let encoder = JSONEncoder()
-			encoder.keyEncodingStrategy = .convertToSnakeCase
 			encoder.dateEncodingStrategy = .formatted(dateFormatter)
 			return encoder
 	}()
 	
 	private static let dateFormatter: DateFormatter = {
 			let formatter = DateFormatter()
-			formatter.dateFormat = "yyyy-MM-dd"
+			formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+			formatter.timeZone = TimeZone(secondsFromGMT: 0)
+			formatter.locale = Locale(identifier: "en_US_POSIX")
 			return formatter
 	}()
 	
 	static func startup(version: String) {
 		let formattedVersion = version.replacingOccurrences(of: ".", with: "_")
-		LogService.event(names: ["open_\(formattedVersion)"])
+		LogService.event(name: "open_\(formattedVersion)")
 	}
 	
 	static func event(name: String) {
-		LogService.event(names: [name])
-	}
-	
-	static func event(names: [String]) {
 		let defaults = UserDefaults.standard
 		if(defaults.bool(forKey: "optOutLogging")) {
 			return
 		}
 		
-		let eventData = EventData(events: names)
+		let eventData = EventData(event: name)
 
 		guard let jsonData = try? encoder.encode(eventData) else {
 				print("Error while logging event: unable to convert event to JSON")
 				return
 		}
-
-		let url = URL(string: "https://api.simpleanalytics.io/events")!
-		var request = URLRequest(url: url)
-		request.httpMethod = "POST"
-		request.httpBody = jsonData
-		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-		request.addValue("application/json", forHTTPHeaderField: "Accept")
-
-		let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-				if let error = error {
-						print("Error while logging event: \(error)")
-				}
+		
+		let url = URL(string: "https://api.segment.io/v1/track")!
+		makeRequest(url: url, json: jsonData)
+	}
+	
+	static func screen(name: String) {
+		let defaults = UserDefaults.standard
+		if(defaults.bool(forKey: "optOutLogging")) {
+			return
 		}
-		task.resume()
+		
+		let eventData = ScreenData(name: name)
+
+		guard let jsonData = try? encoder.encode(eventData) else {
+				print("Error while logging event: unable to convert event to JSON")
+				return
+		}
+		
+		let url = URL(string: "https://api.segment.io/v1/screen")!
+		makeRequest(url: url, json: jsonData)
+	}
+	
+	static func makeRequest(url: URL, json: Data) {
+			var request = URLRequest(url: url)
+			request.httpMethod = "POST"
+			request.httpBody = json
+			request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+			request.addValue("application/json", forHTTPHeaderField: "Accept")
+			request.addValue("Basic MkxtMHBWNm1HdjBvREVtMWVoU3RZWjIzYXJCdHJVUHU6", forHTTPHeaderField: "Authorization")
+
+			let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+					if let error = error {
+							print("Error while logging event: \(error)")
+					}
+			}
+			task.resume()
 	}
 }
