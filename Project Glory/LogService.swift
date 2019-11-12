@@ -10,30 +10,40 @@ import Foundation
 
 class LogService {
 	
+	private struct LogContext: Encodable {
+		#if DEBUG
+		let environment: String = "development"
+		#else
+		let environment: String = "production"
+		#endif
+	}
+	
 	private struct EventData: Encodable {
-			let anonymousId: UUID = UUID()
-			let timestamp: Date = Date()
-			let event: String
+		let anonymousId: UUID = UUID()
+		let timestamp: Date = Date()
+		let event: String
+		let context: LogContext = LogContext()
 	}
 	
 	private struct ScreenData: Encodable {
-			let anonymousId: UUID = UUID()
-			let timestamp: Date = Date()
-			let name: String
+		let anonymousId: UUID = UUID()
+		let timestamp: Date = Date()
+		let name: String
+		let context: LogContext = LogContext()
 	}
 	
 	private static let encoder: JSONEncoder = {
-			let encoder = JSONEncoder()
-			encoder.dateEncodingStrategy = .formatted(dateFormatter)
-			return encoder
+		let encoder = JSONEncoder()
+		encoder.dateEncodingStrategy = .formatted(dateFormatter)
+		return encoder
 	}()
 	
 	private static let dateFormatter: DateFormatter = {
-			let formatter = DateFormatter()
-			formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
-			formatter.timeZone = TimeZone(secondsFromGMT: 0)
-			formatter.locale = Locale(identifier: "en_US_POSIX")
-			return formatter
+		let formatter = DateFormatter()
+		formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+		formatter.timeZone = TimeZone(secondsFromGMT: 0)
+		formatter.locale = Locale(identifier: "en_US_POSIX")
+		return formatter
 	}()
 	
 	static func startup(version: String) {
@@ -50,8 +60,8 @@ class LogService {
 		let eventData = EventData(event: name)
 
 		guard let jsonData = try? encoder.encode(eventData) else {
-				print("Error while logging event: unable to convert event to JSON")
-				return
+			print("Error while logging event: unable to convert event to JSON")
+			return
 		}
 		
 		let url = URL(string: "https://api.segment.io/v1/track")!
@@ -67,8 +77,8 @@ class LogService {
 		let eventData = ScreenData(name: name)
 
 		guard let jsonData = try? encoder.encode(eventData) else {
-				print("Error while logging event: unable to convert event to JSON")
-				return
+			print("Error while logging event: unable to convert event to JSON")
+			return
 		}
 		
 		let url = URL(string: "https://api.segment.io/v1/screen")!
@@ -84,9 +94,9 @@ class LogService {
 			request.addValue("Basic MkxtMHBWNm1HdjBvREVtMWVoU3RZWjIzYXJCdHJVUHU6", forHTTPHeaderField: "Authorization")
 
 			let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-					if let error = error {
-							print("Error while logging event: \(error)")
-					}
+				if let error = error {
+					print("Error while logging event: \(error)")
+				}
 			}
 			task.resume()
 	}
