@@ -17,19 +17,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		let center = UNUserNotificationCenter.current()
+		let defaults = UserDefaults.standard
 		let options: UNAuthorizationOptions = [.alert, .sound];
 		center.requestAuthorization(options: options) {
 			(granted, error) in
-			if !granted {
-				print("Something went wrong")
+			if let error = error {
+				LogService.error(name: "NotificationPermissionError", error: error)
 			}
+			
+			if let existingPermission = defaults.object(forKey: "notificationPermission") {
+				if((existingPermission as! Bool) == granted) {
+					return
+				}
+			}
+			
+			defaults.set(granted, forKey: "notificationPermission")
+			self.reportNotificationPermission(granted: granted)
 		}
 		center.delegate = self
-		
-		let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-		print("path is \(documentsPath)")
-		
 		return true
+	}
+	
+	func reportNotificationPermission(granted: Bool) {
+		if !granted {
+			LogService.event(name: "Notification Permission Denied")
+		} else {
+			LogService.event(name: "Notification Permission Granted")
+		}
 	}
 	
 	func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -90,6 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 				* The store could not be migrated to the current model version.
 				Check the error message to determine what the actual problem was.
 				*/
+				LogService.error(name: "CoreDataError", error: error)
 				fatalError("Unresolved error \(error), \(error.userInfo)")
 			}
 		})
@@ -107,6 +122,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 				// Replace this implementation with code to handle the error appropriately.
 				// fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
 				let nserror = error as NSError
+				LogService.error(name: "CoreDataError", error: error)
 				fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
 			}
 		}

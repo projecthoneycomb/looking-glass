@@ -18,11 +18,28 @@ class LogService {
 		#endif
 	}
 	
+	private struct ErrorContext: Encodable {
+		#if DEBUG
+		let environment: String = "development"
+		#else
+		let environment: String = "production"
+		#endif
+		let name: String
+		let description: String
+	}
+	
 	private struct EventData: Encodable {
 		let anonymousId: UUID = UUID()
 		let timestamp: Date = Date()
 		let event: String
 		let context: LogContext = LogContext()
+	}
+	
+	private struct ErrorData: Encodable {
+		let anonymousId: UUID = UUID()
+		let timestamp: Date = Date()
+		let name: String = "error"
+		let context: ErrorContext
 	}
 	
 	private struct ScreenData: Encodable {
@@ -82,6 +99,23 @@ class LogService {
 		}
 		
 		let url = URL(string: "https://api.segment.io/v1/screen")!
+		makeRequest(url: url, json: jsonData)
+	}
+	
+	static func error(name: String, error: Error) {
+		let defaults = UserDefaults.standard
+		if(defaults.bool(forKey: "optOutLogging")) {
+			return
+		}
+		
+		let eventData = ErrorData(context: ErrorContext(name: name, description: error.localizedDescription))
+
+		guard let jsonData = try? encoder.encode(eventData) else {
+			print("Error while logging event: unable to convert event to JSON")
+			return
+		}
+		
+		let url = URL(string: "https://api.segment.io/v1/track")!
 		makeRequest(url: url, json: jsonData)
 	}
 	

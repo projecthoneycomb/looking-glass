@@ -51,6 +51,7 @@ class SettingsService: ObservableObject {
 				self.authStatus = settings.authorizationStatus
 			}
 		}
+		
 		publishOptOut()
 		publishSettings()
 		publishTime()
@@ -78,6 +79,7 @@ class SettingsService: ObservableObject {
 	}
 	
 	func toggleDay(day: DayOfWeek) {
+		LogService.event(name: "Configured Reminder Days")
 		let defaults = UserDefaults.standard
 		let current = defaults.bool(forKey: "DayOfWeek-\(day.rawValue)")
 		defaults.set(!current, forKey: "DayOfWeek-\(day.rawValue)")
@@ -115,6 +117,7 @@ class SettingsService: ObservableObject {
 	}
 	
 	func changeTime(newDate: Date) {
+		LogService.event(name: "Configured Reminder Time")
 		let defaults = UserDefaults.standard
 		let calendar = Calendar.current
 		let dateComponents = calendar.dateComponents([.hour, .minute], from: newDate)
@@ -155,7 +158,7 @@ class SettingsService: ObservableObject {
 		let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
 		center.add(request, withCompletionHandler: { (error) in
 			if let error = error {
-				print(error)
+				LogService.error(name: "NotificationError", error: error)
 			}
 		})
 	}

@@ -15,7 +15,7 @@ class UpdateService {
 		let defaults = UserDefaults.standard
 		
 		guard let lastOpenedVersion = defaults.string(forKey: "lastOpenedVersion") else {
-			LogService.event(name: "first_open")
+			LogService.event(name: "First Open")
 			defaults.set(Date(), forKey: "lastVersionSet")
 			defaults.set(currentVersion, forKey: "lastOpenedVersion")
 			return true

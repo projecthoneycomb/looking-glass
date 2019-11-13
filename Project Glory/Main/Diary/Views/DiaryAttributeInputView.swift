@@ -134,7 +134,7 @@ struct DiaryAttributeInputView: View {
 			try self.managedObjectContext.save()
 			closeModal()
 		} catch {
-			print(error)
+			LogService.error(name: "CoreDataError", error: error)
 		}
 	}
 	
@@ -174,7 +174,7 @@ struct DiaryAttributeInputView: View {
 			try self.managedObjectContext.save()
 			cb(diaryEntry)
 		} catch {
-			print(error)
+			LogService.error(name: "CoreDataError", error: error)
 		}
 	}
 }
