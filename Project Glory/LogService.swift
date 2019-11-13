@@ -38,7 +38,7 @@ class LogService {
 	private struct ErrorData: Encodable {
 		let anonymousId: UUID = UUID()
 		let timestamp: Date = Date()
-		let name: String = "error"
+		let event: String = "error"
 		let context: ErrorContext
 	}
 	
@@ -116,22 +116,38 @@ class LogService {
 		}
 		
 		let url = URL(string: "https://api.segment.io/v1/track")!
-		makeRequest(url: url, json: jsonData)
+		makeErrorRequest(url: url, json: jsonData)
 	}
 	
 	static func makeRequest(url: URL, json: Data) {
-			var request = URLRequest(url: url)
-			request.httpMethod = "POST"
-			request.httpBody = json
-			request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-			request.addValue("application/json", forHTTPHeaderField: "Accept")
-			request.addValue("Basic MkxtMHBWNm1HdjBvREVtMWVoU3RZWjIzYXJCdHJVUHU6", forHTTPHeaderField: "Authorization")
+		var request = URLRequest(url: url)
+		request.httpMethod = "POST"
+		request.httpBody = json
+		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+		request.addValue("application/json", forHTTPHeaderField: "Accept")
+		request.addValue("Basic MkxtMHBWNm1HdjBvREVtMWVoU3RZWjIzYXJCdHJVUHU6", forHTTPHeaderField: "Authorization")
 
-			let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-				if let error = error {
-					print("Error while logging event: \(error)")
-				}
+		let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+			if let error = error {
+				print("Error while logging event: \(error)")
 			}
-			task.resume()
+		}
+		task.resume()
+	}
+	
+	static func makeErrorRequest(url: URL, json: Data) {
+		var request = URLRequest(url: url)
+		request.httpMethod = "POST"
+		request.httpBody = json
+		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+		request.addValue("application/json", forHTTPHeaderField: "Accept")
+		request.addValue("Basic RXJZdGtGRVJOSW9FZFNkUjVqWHZlbmNRWTlaaXl5VTE6", forHTTPHeaderField: "Authorization")
+
+		let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+			if let error = error {
+				print("Error while logging event: \(error)")
+			}
+		}
+		task.resume()
 	}
 }
