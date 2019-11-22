@@ -8,6 +8,12 @@
 
 import Foundation
 
+struct Metadata: Encodable {
+	let day: String
+	let hour: Int
+	let minute: Int
+}
+
 class LogService {
 	
 	private struct LogContext: Encodable {
@@ -16,6 +22,7 @@ class LogService {
 		#else
 		let environment: String = "production"
 		#endif
+		let metadata: Metadata?
 	}
 	
 	private struct ErrorContext: Encodable {
@@ -32,7 +39,7 @@ class LogService {
 		let anonymousId: UUID = UUID()
 		let timestamp: Date = Date()
 		let event: String
-		let context: LogContext = LogContext()
+		let context: LogContext
 	}
 	
 	private struct ErrorData: Encodable {
@@ -46,7 +53,7 @@ class LogService {
 		let anonymousId: UUID = UUID()
 		let timestamp: Date = Date()
 		let name: String
-		let context: LogContext = LogContext()
+		let context: LogContext = LogContext(metadata: nil)
 	}
 	
 	private static let encoder: JSONEncoder = {
@@ -55,7 +62,7 @@ class LogService {
 		return encoder
 	}()
 	
-	private static let dateFormatter: DateFormatter = {
+	static let dateFormatter: DateFormatter = {
 		let formatter = DateFormatter()
 		formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
 		formatter.timeZone = TimeZone(secondsFromGMT: 0)
@@ -68,13 +75,16 @@ class LogService {
 		LogService.event(name: "open_\(formattedVersion)")
 	}
 	
-	static func event(name: String) {
+	static func event(name: String, metadata: Metadata? = nil) {
 		let defaults = UserDefaults.standard
 		if(defaults.bool(forKey: "optOutLogging")) {
 			return
 		}
 		
-		let eventData = EventData(event: name)
+		
+		
+		let context = LogContext(metadata: metadata)
+		let eventData = EventData(event: name, context: context)
 
 		guard let jsonData = try? encoder.encode(eventData) else {
 			print("Error while logging event: unable to convert event to JSON")

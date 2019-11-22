@@ -36,6 +36,25 @@ enum DayOfWeek: Int, CaseIterable {
 			return "S"
 		}
 	}
+	
+	func toName() -> String {
+		switch self {
+		case .monday:
+			return "Monday"
+		case .tuesday:
+			return "Tuesday"
+		case .wednesday:
+			return "Wednesday"
+		case .thursday:
+			return "Thursday"
+		case .friday:
+			return "Friday"
+		case .saturday:
+			return "Saturday"
+		case .sunday:
+			return "Sunday"
+		}
+	}
 }
 
 class SettingsService: ObservableObject {
@@ -141,10 +160,11 @@ class SettingsService: ObservableObject {
 	func scheduleNotificationFor(day: DayOfWeek, hour: Int, minute: Int) {
 		let center = UNUserNotificationCenter.current()
 		let identifier = "HCDailyNotificationForDay-\(day.rawValue)"
-
+		
 		let content = UNMutableNotificationContent()
 		content.title = "How has your day gone?"
 		content.body = "No matter how it went, capturing how you felt is important in giving you perspective and clarity."
+		content.userInfo = ["OriginalDay": day.toName(), "OriginalHour": hour, "OriginalMinute": minute]
 		content.sound = UNNotificationSound.default
 		
 		var components = DateComponents()

@@ -54,11 +54,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 		case UNNotificationDefaultActionIdentifier:
 			print("Default")
 			DispatchQueue.main.async {
-				let userInfo = ["notification": response]
-				let note = Notification(name: .onNotificationStart, userInfo: userInfo)
+				let note = Notification(name: .onNotificationStart, userInfo: ["notification": response])
 				NotificationCenter.default.post(note)
 				
-				LogService.event(name: "notification_tap")
+				let userInfo = response.notification.request.content.userInfo
+				guard let day = userInfo["OriginalDay"] as? String, let hour = userInfo["OriginalHour"] as? Int, let minute = userInfo["OriginalMinute"] as? Int else {
+					LogService.event(name: "notification_tap")
+					return
+				}
+				
+				let metadata = Metadata(day: day, hour: hour, minute: minute)
+				LogService.event(name: "notification_tap", metadata: metadata)
 			}
 		default:
 			print("Unknown action")
