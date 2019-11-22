@@ -36,14 +36,14 @@ class LogService {
 	}
 	
 	private struct EventData: Encodable {
-		let anonymousId: UUID = UUID()
+		let anonymousId: UUID
 		let timestamp: Date = Date()
 		let event: String
 		let context: LogContext
 	}
 	
 	private struct ErrorData: Encodable {
-		let anonymousId: UUID = UUID()
+		let anonymousId: UUID
 		let timestamp: Date = Date()
 		let event: String = "error"
 		let context: ErrorContext
@@ -81,10 +81,13 @@ class LogService {
 			return
 		}
 		
-		
+		guard let anonIdString = defaults.string(forKey: "anonId"), let anonId = UUID(uuidString: anonIdString) else {
+			defaults.set(UUID().uuidString, forKey: "anonId")
+			return
+		}
 		
 		let context = LogContext(metadata: metadata)
-		let eventData = EventData(event: name, context: context)
+		let eventData = EventData(anonymousId: anonId, event: name, context: context)
 
 		guard let jsonData = try? encoder.encode(eventData) else {
 			print("Error while logging event: unable to convert event to JSON")
@@ -118,7 +121,12 @@ class LogService {
 			return
 		}
 		
-		let eventData = ErrorData(context: ErrorContext(name: name, description: error.localizedDescription))
+		guard let anonIdString = defaults.string(forKey: "anonId"), let anonId = UUID(uuidString: anonIdString) else {
+			defaults.set(UUID().uuidString, forKey: "anonId")
+			return
+		}
+		
+		let eventData = ErrorData(anonymousId: anonId, context: ErrorContext(name: name, description: error.localizedDescription))
 
 		guard let jsonData = try? encoder.encode(eventData) else {
 			print("Error while logging event: unable to convert event to JSON")

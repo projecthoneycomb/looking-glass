@@ -16,6 +16,7 @@ class UpdateService {
 		
 		guard let lastOpenedVersion = defaults.string(forKey: "lastOpenedVersion") else {
 			LogService.event(name: "First Open")
+			defaults.set(UUID().uuidString, forKey: "anonId")
 			defaults.set(Date(), forKey: "lastVersionSet")
 			defaults.set(currentVersion, forKey: "lastOpenedVersion")
 			return true
