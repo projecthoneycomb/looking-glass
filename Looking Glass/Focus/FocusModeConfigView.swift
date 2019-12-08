@@ -62,6 +62,8 @@ struct FocusModeSoundtrackConfigView: View {
 //		Soundtrack(id: "classicjazz", name: "Classic Jazz", description: "Electric instrumentals to help you dial in")
 	]
 	
+	@State var selectedSoundtrack: Soundtrack?
+	
 	var body: some View {
 		ScrollView {
 			VStack(alignment: .center, spacing: 20) {
@@ -69,8 +71,11 @@ struct FocusModeSoundtrackConfigView: View {
 					.font(.body)
 					.fontWeight(.bold)
 				ForEach(soundtracks) { soundtrack in
-					NavigationLink(destination: FocusModeExtraStepsConfigView(config: FocusModeConfig(soundtrack: soundtrack, schedule: nil))) {
+					Button(action: { self.selectedSoundtrack = soundtrack }) {
 						SoundtrackCard(soundtrack: soundtrack)
+					}
+					.sheet(item: self.$selectedSoundtrack) { soundtrack in
+						FocusModeView(config: FocusModeConfig(soundtrack: soundtrack, schedule: nil))
 					}
 				}
 			}
