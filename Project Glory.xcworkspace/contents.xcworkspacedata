@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:Project Glory.xcodeproj">
+      location = "container:/Users/james/Documents/Projects/projectglory/Looking Glass.xcodeproj">
    </FileRef>
 </Workspace>

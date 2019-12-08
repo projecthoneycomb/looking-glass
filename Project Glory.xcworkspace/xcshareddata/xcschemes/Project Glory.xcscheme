@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1A2E8B1F233B884700BC113C"
                BuildableName = "Looking Glass.app"
-               BlueprintName = "Project Glory"
-               ReferencedContainer = "container:Project Glory.xcodeproj">
+               BlueprintName = "Looking Glass"
+               ReferencedContainer = "container:Looking Glass.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,8 +46,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1A2E8B1F233B884700BC113C"
             BuildableName = "Looking Glass.app"
-            BlueprintName = "Project Glory"
-            ReferencedContainer = "container:Project Glory.xcodeproj">
+            BlueprintName = "Looking Glass"
+            ReferencedContainer = "container:Looking Glass.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -69,8 +69,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1A2E8B1F233B884700BC113C"
             BuildableName = "Looking Glass.app"
-            BlueprintName = "Project Glory"
-            ReferencedContainer = "container:Project Glory.xcodeproj">
+            BlueprintName = "Looking Glass"
+            ReferencedContainer = "container:Looking Glass.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
