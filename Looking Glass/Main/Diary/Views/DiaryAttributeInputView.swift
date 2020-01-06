@@ -169,6 +169,8 @@ struct DiaryAttributeInputView: View {
 		diaryEntry.dayOfWeek = Int16(calendar.component(.weekday, from: currentDate))
 		diaryEntry.year = Int16(calendar.component(.year, from: currentDate))
 		diaryEntry.createdAt = currentDate
+		diaryEntry.version = 2
+		diaryEntry.uuid = UUID()
 		
 		do {
 			try self.managedObjectContext.save()

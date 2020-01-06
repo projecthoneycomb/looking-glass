@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 						managedObjectContext.automaticallyMergesChangesFromParent = true
 					
 						do {
-							let request = DiaryEntry.updateAllEntries(to: 1)
+							let request = DiaryEntry.updateAllEntries(to: 2)
 							let _ = try managedObjectContext.execute(request)
 						} catch {
 							fatalError("Failed to execute request: \(error)")
